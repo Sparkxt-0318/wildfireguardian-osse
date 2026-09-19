@@ -20,7 +20,7 @@ truth and observations provably separated.
 - [x] Leakage / determinism / timing / causality tests
 - [x] Eight validation worlds
 - [x] CLI `generate` / `validate` / `summarize`
-- [x] First batch of 100–500 worlds + summary statistics
+- [x] First batch: 384 worlds generated, validated and summarised
 - [x] Documented limitations
 
 ## Phase 2 — Fidelity and coverage (not started)

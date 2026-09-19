@@ -78,3 +78,10 @@ worlds/<batch>/
 Generated worlds are **not committed** (`.gitignore`): they are reproducible
 from the manifest and the master seed. A batch directory is a build artifact,
 not a source.
+
+## `results/`
+
+`reference_batch_summary.md` / `.json` — the summary of the 384-world reference
+batch, kept as a result record so the repository carries evidence of what the
+laboratory produced without committing ~2 GB of worlds. Regenerate the batch
+from the manifest and `master_seed: 20260919` to reproduce it exactly.

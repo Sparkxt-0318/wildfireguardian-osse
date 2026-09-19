@@ -1,0 +1,78 @@
+{
+  "batch_dir": "worlds/reference",
+  "n_worlds": 384,
+  "n_failures": 0,
+  "n_partial_directories": 0,
+  "partial_directories": [],
+  "flags": {
+    "boundary_contact": 4
+  },
+  "burned_area_ha": {
+    "n": 384,
+    "min": 11.61,
+    "median": 95.85,
+    "mean": 126.899296875,
+    "max": 553.86
+  },
+  "n_fire_detections": {
+    "n": 384,
+    "min": 0.0,
+    "median": 16.0,
+    "mean": 18.828125,
+    "max": 64.0
+  },
+  "n_false_positive_detections": {
+    "n": 384,
+    "min": 0.0,
+    "median": 2.0,
+    "mean": 2.1119791666666665,
+    "max": 8.0
+  },
+  "n_outage_scans": {
+    "n": 384,
+    "min": 0.0,
+    "median": 0.0,
+    "mean": 0.7395833333333334,
+    "max": 6.0
+  },
+  "n_weather_obs": {
+    "n": 384,
+    "min": 72.0,
+    "median": 104.0,
+    "mean": 102.72395833333333,
+    "max": 117.0
+  },
+  "n_spot_ignitions": {
+    "n": 384,
+    "min": 0.0,
+    "median": 0.0,
+    "mean": 0.8854166666666666,
+    "max": 10.0
+  },
+  "first_available_detection_min": {
+    "n": 370,
+    "min": 9.003043846898679,
+    "median": 38.23915949675261,
+    "mean": 41.96667636358373,
+    "max": 136.38827313084036
+  },
+  "detection_latency_min": {
+    "n": 370,
+    "min": 4.013727343155395,
+    "median": 30.08218693816591,
+    "mean": 18.641126629331477,
+    "max": 42.799216645596545
+  },
+  "monotonicity": {
+    "burned_area_vs_wind_speed": {
+      "spearman_rho": 0.8010022056478189,
+      "n": 384
+    },
+    "burned_area_vs_spread_multiplier": {
+      "spearman_rho": 0.4436097912864622,
+      "n": 384
+    },
+    "note": "Spearman rho over the batch. Both should be clearly positive; a near-zero value means the sweep axis is not doing what it claims, or the fire is saturating at the domain boundary (see flags.boundary_contact)."
+  },
+  "caveat": "Statistics describe the synthetic system defined in docs/NATURE_MODEL.md and docs/OBSERVATION_MODEL.md. They are not statements about real wildfires (docs/SCOPE.md)."
+}

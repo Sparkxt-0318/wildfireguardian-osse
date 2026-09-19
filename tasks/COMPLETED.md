@@ -79,9 +79,19 @@ Findings, and what happened to each.
 
 ## First batch
 
-* 384 worlds from `experiments/manifests/sweeps/reference_batch.yaml`, swept
-  over ignition point, wind speed, wind direction, spread multiplier, spotting
-  and detection latency; validated and summarised.
+384 worlds from `experiments/manifests/sweeps/reference_batch.yaml`, swept over
+ignition point (3) x wind speed (4) x wind direction (4) x spread multiplier (2)
+x spotting on/off (2) x detection latency (2). Summary kept at
+`experiments/results/reference_batch_summary.md`.
+
+* **384 completed, 0 failed**, and `wg-osse validate` passed on every world.
+* Burned area 11.6 - 554 ha (median 96); 4 worlds flagged `boundary_contact`
+  and must be excluded from area analyses.
+* 14 worlds produced **no detection at all** - small fires below what the
+  sensor can pick up. A real observation-quality outcome, not a failure.
+* Monotonicity holds: burned area vs wind speed rho = 0.80, vs spread
+  multiplier rho = 0.44.
+* Detection latency spans 4 - 43 min across the two swept sensor variants.
 
 ## Definition of done — Phase 1
 
