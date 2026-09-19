@@ -1,0 +1,12 @@
+# Generated worlds and batch outputs (regenerate with `wg-osse generate`)
+worlds/
+*.egg-info/
+build/
+dist/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/

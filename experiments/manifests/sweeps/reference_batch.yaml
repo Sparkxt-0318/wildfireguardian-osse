@@ -1,0 +1,126 @@
+# Reference batch: 384 worlds.
+#
+#   wg-osse generate experiments/manifests/sweeps/reference_batch.yaml -o worlds/reference
+#   wg-osse validate worlds/reference
+#   wg-osse summarize worlds/reference --json worlds/reference/summary.json
+#
+# Synthetic nature model for controlled experiments; not an operational
+# wildfire forecast model.
+#
+# Design notes (docs/VALIDATION.md#4):
+#   * wind_speed_ms stays at or below 6 m/s, which is where the 16-direction
+#     stencil keeps burned area within ~15% of the analytic ellipse and
+#     monotone in wind speed.  Sweeping higher would produce artefacts that
+#     look like findings.
+#   * the domain (7.68 km) and horizon (120 min) are sized so that even the
+#     fastest combination (6 m/s, spread_multiplier 1.2) stays inside the
+#     boundary; worlds that still touch it are flagged `boundary_contact` and
+#     must be excluded from area analyses (docs/FAILURE_MODES.md#G-04).
+#   * NO axis targets `name`, `description` or `tags`: swept values are hidden
+#     parameters (docs/DECISIONS.md#d-013).
+
+base:
+  name: reference_batch
+  description: >-
+    Reference OSSE batch. Parameters are deliberately not described here:
+    this field is planner-visible.
+  epoch: "2026-04-01T09:00:00Z"
+  master_seed: 20260919
+  tags: [reference]
+
+  grid: {nx: 256, ny: 256, cell_size_m: 30.0}
+  time: {horizon_min: 120.0, dt_min: 1.0}
+
+  terrain: {kind: ridge, relief_m: 180.0, aspect_deg: 45.0, ridge_width_m: 1200.0}
+  fuels: {kind: patchy, base_multiplier: 1.0, patch_scale_m: 600.0, patch_low: 0.55, patch_high: 1.3}
+
+  weather:
+    wind_speed_ms: 4.0
+    wind_dir_deg: 0.0
+    speed_sigma_ms: 0.8
+    dir_sigma_deg: 12.0
+    speed_tau_min: 30.0
+    dir_tau_min: 45.0
+    temp_c: 19.0
+    rh_pct: 32.0
+    temp_sigma_c: 0.8
+    rh_sigma_pct: 4.0
+
+  nature:
+    r0_base_m_per_min: 3.0
+    spread_multiplier: 1.0
+    residence_time_min: 30.0
+    stencil_max_offset: 2
+    ignitions: [{x_m: 3840.0, y_m: 3840.0, time_min: 0.0}]
+    spotting:
+      enabled: false
+      interval_min: 10.0
+      rate_per_ha_per_min: 0.002
+      median_distance_m: 400.0
+      sigma_log: 0.55
+      bearing_sigma_deg: 18.0
+      p_ignite: 0.5
+
+  observations:
+    fire_sensors:
+      - sensor_id: fire_sensor_a
+        pixel_size_m: 375.0
+        cadence_min: 20.0
+        first_scan_offset_min: 5.0
+        p_detect_max: 0.9
+        detect_ref_area_m2: 25000.0
+        geoloc_sigma_m: 180.0
+        false_positive_rate_per_scan: 0.4
+        latency: {processing_latency_min: 4.0, delivery_latency_min: 2.0, jitter_mean_min: 1.0}
+    weather_network:
+      network_id: wx_net_a
+      layout: {kind: grid, count: 9, margin_frac: 0.15}
+      cadence_min: 10.0
+      sigma_speed_ms: 0.7
+      sigma_dir_deg: 14.0
+      sigma_temp_c: 0.5
+      sigma_rh_pct: 3.0
+      latency: {processing_latency_min: 1.0, delivery_latency_min: 1.0, jitter_mean_min: 0.5}
+    missingness: {mode: correlated_outage, p_fail: 0.06, p_repair: 0.3, tick_min: 20.0}
+
+sweep:
+  mode: grid
+  max_worlds: 500
+  master_seed: 20260919
+  axes:
+    # 3 ignition points, all within 400 m of the domain centre so that every
+    # wind direction has room to run.
+    - path: nature.ignitions
+      values:
+        - [{x_m: 3840.0, y_m: 3840.0, time_min: 0.0}]
+        - [{x_m: 3456.0, y_m: 4224.0, time_min: 0.0}]
+        - [{x_m: 4224.0, y_m: 3456.0, time_min: 0.0}]
+    - path: weather.wind_speed_ms
+      values: [0.0, 2.0, 4.0, 6.0]
+    - path: weather.wind_dir_deg
+      values: [0.0, 90.0, 180.0, 270.0]
+    - path: nature.spread_multiplier
+      values: [0.8, 1.2]
+    - path: nature.spotting.enabled
+      values: [false, true]
+    # Detection latency: prompt vs slow delivery of the same sensor.
+    - path: observations.fire_sensors
+      values:
+        - - sensor_id: fire_sensor_a
+            pixel_size_m: 375.0
+            cadence_min: 20.0
+            first_scan_offset_min: 5.0
+            p_detect_max: 0.9
+            detect_ref_area_m2: 25000.0
+            geoloc_sigma_m: 180.0
+            false_positive_rate_per_scan: 0.4
+            latency: {processing_latency_min: 3.0, delivery_latency_min: 1.0, jitter_mean_min: 0.5}
+        - - sensor_id: fire_sensor_a
+            pixel_size_m: 375.0
+            cadence_min: 20.0
+            first_scan_offset_min: 5.0
+            p_detect_max: 0.9
+            detect_ref_area_m2: 25000.0
+            geoloc_sigma_m: 180.0
+            false_positive_rate_per_scan: 0.4
+            latency: {processing_latency_min: 22.0, delivery_latency_min: 8.0, jitter_mean_min: 3.0}
