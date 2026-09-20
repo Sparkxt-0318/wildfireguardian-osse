@@ -17,6 +17,18 @@ OBSERVATION PROCESS          the only channel from truth to planner
 AVAILABLE OBSERVATIONS       observations/  degraded, delayed, incomplete
 ```
 
+The repository ships **two packages**:
+
+| package | what it is |
+|---|---|
+| `wildfireguardian_osse` | the laboratory: worlds, observations, storage, validation |
+| `wildfireguardian_fv` | the forecast-value experiment built on top of it |
+
+The dependency is one-way — the laboratory never imports the experiment, so it
+stays usable by any evaluation method (`docs/DECISIONS.md#d-017`). A consumer
+that wants only the laboratory can ignore `wildfireguardian_fv` entirely.
+See `experiments/forecast_value_mve/` for the experiment and its reports.
+
 > **Synthetic nature model for controlled experiments; not an operational
 > wildfire forecast model.** Every coefficient is chosen for controllability,
 > not calibrated against any fire. Results are statements about the synthetic

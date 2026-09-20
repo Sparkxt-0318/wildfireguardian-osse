@@ -1,0 +1,189 @@
+{
+  "banner": "SYNTHETIC OSSE RESULT -- generic synthetic worlds, not Korean-anchored. Statements apply to the declared nature and observation models only.",
+  "n_worlds": 12,
+  "split": "development",
+  "tuning_applied": true,
+  "outcomes": [
+    {
+      "benchmark": "ACCURATE_BUT_LATE",
+      "status": "DEMONSTRATED",
+      "detail": "CSI 1.000 -> 1.000 (same within 0.05), delta J -0.1213 -> +0.0793",
+      "numbers": {
+        "timely": {
+          "delta_j": -0.12128449121610446,
+          "j_forecast": 0.11227688790095901,
+          "j_baseline": 0.23356137911706346,
+          "csi": 1.0,
+          "n_worlds": 12
+        },
+        "late": {
+          "delta_j": 0.07934034539517197,
+          "j_forecast": 0.31290172451223547,
+          "j_baseline": 0.23356137911706346,
+          "csi": 1.0,
+          "n_worlds": 12
+        }
+      }
+    },
+    {
+      "benchmark": "CRUDE_BUT_TIMELY",
+      "status": "NOT_DEMONSTRATED",
+      "detail": "crude/timely CSI 0.239 vs accurate/late 1.000; delta J +0.0850 vs +0.0793",
+      "numbers": {
+        "crude_timely": {
+          "delta_j": 0.0849574643146495,
+          "j_forecast": 0.318518843431713,
+          "j_baseline": 0.23356137911706346,
+          "csi": 0.23871534352513554,
+          "n_worlds": 12
+        },
+        "accurate_late": {
+          "delta_j": 0.07934034539517197,
+          "j_forecast": 0.31290172451223547,
+          "j_baseline": 0.23356137911706346,
+          "csi": 1.0,
+          "n_worlds": 12
+        }
+      }
+    },
+    {
+      "benchmark": "FORECAST_HARM",
+      "status": "DEMONSTRATED",
+      "detail": "regimes with delta J > 0: accurate_late (+0.0793), crude_timely (+0.0850), crude_late (+0.1619), severe_timely (+0.1342)",
+      "numbers": {
+        "accurate_timely": {
+          "delta_j": -0.12128449121610446,
+          "j_forecast": 0.11227688790095901,
+          "j_baseline": 0.23356137911706346,
+          "csi": 1.0,
+          "n_worlds": 12
+        },
+        "accurate_late": {
+          "delta_j": 0.07934034539517197,
+          "j_forecast": 0.31290172451223547,
+          "j_baseline": 0.23356137911706346,
+          "csi": 1.0,
+          "n_worlds": 12
+        },
+        "crude_timely": {
+          "delta_j": 0.0849574643146495,
+          "j_forecast": 0.318518843431713,
+          "j_baseline": 0.23356137911706346,
+          "csi": 0.23871534352513554,
+          "n_worlds": 12
+        },
+        "crude_late": {
+          "delta_j": 0.161916729286541,
+          "j_forecast": 0.39547810840360453,
+          "j_baseline": 0.23356137911706346,
+          "csi": 0.23871534352513554,
+          "n_worlds": 12
+        },
+        "severe_timely": {
+          "delta_j": 0.13419758912863755,
+          "j_forecast": 0.36775896824570103,
+          "j_baseline": 0.23356137911706346,
+          "csi": 0.1400263081945818,
+          "n_worlds": 12
+        }
+      }
+    },
+    {
+      "benchmark": "BASELINE_MATCH",
+      "status": "NOT_DEMONSTRATED",
+      "detail": "no regime had |delta J| <= 0.02",
+      "numbers": {
+        "accurate_timely": {
+          "delta_j": -0.12128449121610446,
+          "j_forecast": 0.11227688790095901,
+          "j_baseline": 0.23356137911706346,
+          "csi": 1.0,
+          "n_worlds": 12
+        },
+        "accurate_late": {
+          "delta_j": 0.07934034539517197,
+          "j_forecast": 0.31290172451223547,
+          "j_baseline": 0.23356137911706346,
+          "csi": 1.0,
+          "n_worlds": 12
+        },
+        "crude_timely": {
+          "delta_j": 0.0849574643146495,
+          "j_forecast": 0.318518843431713,
+          "j_baseline": 0.23356137911706346,
+          "csi": 0.23871534352513554,
+          "n_worlds": 12
+        },
+        "crude_late": {
+          "delta_j": 0.161916729286541,
+          "j_forecast": 0.39547810840360453,
+          "j_baseline": 0.23356137911706346,
+          "csi": 0.23871534352513554,
+          "n_worlds": 12
+        },
+        "severe_timely": {
+          "delta_j": 0.13419758912863755,
+          "j_forecast": 0.36775896824570103,
+          "j_baseline": 0.23356137911706346,
+          "csi": 0.1400263081945818,
+          "n_worlds": 12
+        }
+      }
+    },
+    {
+      "benchmark": "SIMILAR_SKILL_DIFFERENT_VALUE",
+      "status": "DEMONSTRATED",
+      "detail": "accurate_timely vs accurate_late: CSI 1.000/1.000, delta J -0.1213/+0.0793; crude_timely vs crude_late: CSI 0.239/0.239, delta J +0.0850/+0.1619",
+      "numbers": {
+        "pairs": [
+          [
+            "accurate_timely",
+            "accurate_late"
+          ],
+          [
+            "crude_timely",
+            "crude_late"
+          ]
+        ]
+      }
+    }
+  ],
+  "condition_summaries": {
+    "accurate_timely": {
+      "delta_j": -0.12128449121610446,
+      "j_forecast": 0.11227688790095901,
+      "j_baseline": 0.23356137911706346,
+      "csi": 1.0,
+      "n_worlds": 12
+    },
+    "accurate_late": {
+      "delta_j": 0.07934034539517197,
+      "j_forecast": 0.31290172451223547,
+      "j_baseline": 0.23356137911706346,
+      "csi": 1.0,
+      "n_worlds": 12
+    },
+    "crude_timely": {
+      "delta_j": 0.0849574643146495,
+      "j_forecast": 0.318518843431713,
+      "j_baseline": 0.23356137911706346,
+      "csi": 0.23871534352513554,
+      "n_worlds": 12
+    },
+    "crude_late": {
+      "delta_j": 0.161916729286541,
+      "j_forecast": 0.39547810840360453,
+      "j_baseline": 0.23356137911706346,
+      "csi": 0.23871534352513554,
+      "n_worlds": 12
+    },
+    "severe_timely": {
+      "delta_j": 0.13419758912863755,
+      "j_forecast": 0.36775896824570103,
+      "j_baseline": 0.23356137911706346,
+      "csi": 0.1400263081945818,
+      "n_worlds": 12
+    }
+  },
+  "note": "Validation cases only. A DEMONSTRATED benchmark shows the experiment can express the regime; it is not evidence about how often the regime occurs."
+}

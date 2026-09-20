@@ -1,0 +1,305 @@
+{
+  "banner": "SYNTHETIC OSSE RESULT -- generic synthetic worlds, not Korean-anchored. Statements apply to the declared nature and observation models only.",
+  "deltas": {
+    "CONTROLLED_PERTURBATION|e0_d0": {
+      "delta_j_mean": -0.164168103817791,
+      "ci_lo": -0.20249231898658646,
+      "ci_hi": -0.12379182296354166,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e0_d15": {
+      "delta_j_mean": -0.15384917555142197,
+      "ci_lo": -0.19388492229172863,
+      "ci_hi": -0.11045717564368392,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e0_d30": {
+      "delta_j_mean": -0.12287847377149472,
+      "ci_lo": -0.16960595051136737,
+      "ci_hi": -0.0690700866669147,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e0_d5": {
+      "delta_j_mean": -0.15902040939070766,
+      "ci_lo": -0.1981338168940559,
+      "ci_hi": -0.11703306189856151,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e0_d60": {
+      "delta_j_mean": 0.04408604784474204,
+      "ci_lo": -0.01827491917737269,
+      "ci_hi": 0.10952238446184684,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e10_d0": {
+      "delta_j_mean": -0.10138967437748016,
+      "ci_lo": -0.1493795418948619,
+      "ci_hi": -0.05505758883426341,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e10_d15": {
+      "delta_j_mean": -0.05785963563740081,
+      "ci_lo": -0.10276168488202711,
+      "ci_hi": -0.009398179008019215,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e10_d30": {
+      "delta_j_mean": -0.022669621304563497,
+      "ci_lo": -0.07592738622063078,
+      "ci_hi": 0.03439430913361853,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e10_d5": {
+      "delta_j_mean": -0.09365902662781082,
+      "ci_lo": -0.14062121042540918,
+      "ci_hi": -0.0478262312804853,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e10_d60": {
+      "delta_j_mean": 0.1078268344551918,
+      "ci_lo": 0.036547836753782224,
+      "ci_hi": 0.17967286636261984,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e20_d0": {
+      "delta_j_mean": -0.0005599250620039689,
+      "ci_lo": -0.05396734448931465,
+      "ci_hi": 0.058159195714926434,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e20_d15": {
+      "delta_j_mean": 0.024218471972552908,
+      "ci_lo": -0.029580046120515048,
+      "ci_hi": 0.08229270490641531,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e20_d30": {
+      "delta_j_mean": 0.0514263990674603,
+      "ci_lo": -0.003066655569320463,
+      "ci_hi": 0.1101872673523685,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e20_d5": {
+      "delta_j_mean": 0.00688933684606481,
+      "ci_lo": -0.04397095146819195,
+      "ci_hi": 0.06192548789180308,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e20_d60": {
+      "delta_j_mean": 0.10909484038773148,
+      "ci_lo": 0.03834176627035797,
+      "ci_hi": 0.18220127307345405,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e35_d0": {
+      "delta_j_mean": 0.06551319802496694,
+      "ci_lo": 0.006889441432519008,
+      "ci_hi": 0.1256186845507605,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e35_d15": {
+      "delta_j_mean": 0.0771033616517857,
+      "ci_lo": 0.016424741478257274,
+      "ci_hi": 0.14286462811516196,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e35_d30": {
+      "delta_j_mean": 0.09337145753968253,
+      "ci_lo": 0.03181590140269511,
+      "ci_hi": 0.1602280298263889,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e35_d5": {
+      "delta_j_mean": 0.07109720491319443,
+      "ci_lo": 0.011986728157944772,
+      "ci_hi": 0.13397157297280074,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e35_d60": {
+      "delta_j_mean": 0.1246065903968254,
+      "ci_lo": 0.05398472286479001,
+      "ci_hi": 0.1979400024445063,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e55_d0": {
+      "delta_j_mean": 0.11003061844163357,
+      "ci_lo": 0.04253433416650131,
+      "ci_hi": 0.18096669923468495,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e55_d15": {
+      "delta_j_mean": 0.12354225131448411,
+      "ci_lo": 0.05775722635920965,
+      "ci_hi": 0.19276395600367888,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e55_d30": {
+      "delta_j_mean": 0.12738343180224868,
+      "ci_lo": 0.059381764516782405,
+      "ci_hi": 0.19782534028116727,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e55_d5": {
+      "delta_j_mean": 0.1155924548363095,
+      "ci_lo": 0.049150782624152595,
+      "ci_hi": 0.18467439361009833,
+      "n": 60
+    },
+    "CONTROLLED_PERTURBATION|e55_d60": {
+      "delta_j_mean": 0.1276275434837963,
+      "ci_lo": 0.05682036857242062,
+      "ci_hi": 0.20070273221908067,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e0_d0": {
+      "delta_j_mean": 0.028755675317460313,
+      "ci_lo": -0.016796763785838293,
+      "ci_hi": 0.07640329764432455,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e0_d15": {
+      "delta_j_mean": 0.04492786563326718,
+      "ci_lo": -0.005085288598420977,
+      "ci_hi": 0.09627606378856646,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e0_d30": {
+      "delta_j_mean": 0.04072050351851851,
+      "ci_lo": -0.008341669691736933,
+      "ci_hi": 0.09125911068869871,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e0_d5": {
+      "delta_j_mean": 0.042571088808697075,
+      "ci_lo": -0.007232634632750491,
+      "ci_hi": 0.09367257841639796,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e0_d60": {
+      "delta_j_mean": 0.044349348919477505,
+      "ci_lo": -0.005098743207299932,
+      "ci_hi": 0.09453262388731809,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e10_d0": {
+      "delta_j_mean": 0.04870815070353836,
+      "ci_lo": -0.00024136163583003012,
+      "ci_hi": 0.09886796981082582,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e10_d15": {
+      "delta_j_mean": 0.043035561039186494,
+      "ci_lo": -0.00544307259457672,
+      "ci_hi": 0.09450767289876816,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e10_d30": {
+      "delta_j_mean": 0.038726284635416656,
+      "ci_lo": -0.007161742921792331,
+      "ci_hi": 0.08713720329598625,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e10_d5": {
+      "delta_j_mean": 0.04814797092013887,
+      "ci_lo": -0.0009617355538607827,
+      "ci_hi": 0.09895192411125575,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e10_d60": {
+      "delta_j_mean": 0.038070391332671955,
+      "ci_lo": -0.008197343786851032,
+      "ci_hi": 0.08729398578674767,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e20_d0": {
+      "delta_j_mean": 0.05360320373098545,
+      "ci_lo": 0.004354427164909892,
+      "ci_hi": 0.10448968306260328,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e20_d15": {
+      "delta_j_mean": 0.056739545757275134,
+      "ci_lo": 0.008475905592137898,
+      "ci_hi": 0.10819172097935262,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e20_d30": {
+      "delta_j_mean": 0.04174053961309523,
+      "ci_lo": -0.0052271352016369085,
+      "ci_hi": 0.09056040377281746,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e20_d5": {
+      "delta_j_mean": 0.054557791661706344,
+      "ci_lo": 0.00651492417063492,
+      "ci_hi": 0.10629128503819443,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e20_d60": {
+      "delta_j_mean": 0.042575818052248665,
+      "ci_lo": -0.0034493739416956003,
+      "ci_hi": 0.08998705658852096,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e35_d0": {
+      "delta_j_mean": 0.05255076712384258,
+      "ci_lo": 0.003943189477368547,
+      "ci_hi": 0.10410708093756196,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e35_d15": {
+      "delta_j_mean": 0.05341142108796296,
+      "ci_lo": 0.00494870150330687,
+      "ci_hi": 0.10464926124658977,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e35_d30": {
+      "delta_j_mean": 0.050417912455357136,
+      "ci_lo": 0.003624896064236099,
+      "ci_hi": 0.09821985729476684,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e35_d5": {
+      "delta_j_mean": 0.05365856601025131,
+      "ci_lo": 0.005445762677641355,
+      "ci_hi": 0.10498396546062744,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e35_d60": {
+      "delta_j_mean": 0.05202942488095237,
+      "ci_lo": 0.00460134317152364,
+      "ci_hi": 0.10080535135065306,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e55_d0": {
+      "delta_j_mean": 0.04814969553736772,
+      "ci_lo": -0.0003199268507977745,
+      "ci_hi": 0.09904286021868798,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e55_d15": {
+      "delta_j_mean": 0.05374099770667987,
+      "ci_lo": 0.005072551693989736,
+      "ci_hi": 0.10511922346974203,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e55_d30": {
+      "delta_j_mean": 0.052028603439980156,
+      "ci_lo": 0.00406097028406084,
+      "ci_hi": 0.1029750728003885,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e55_d5": {
+      "delta_j_mean": 0.04815454887814152,
+      "ci_lo": -0.0003438315047329771,
+      "ci_hi": 0.09899368578959986,
+      "n": 60
+    },
+    "INDEPENDENT_MODEL_FORECAST|e55_d60": {
+      "delta_j_mean": 0.052564767704199725,
+      "ci_lo": 0.005528834580171117,
+      "ci_hi": 0.1033883201605282,
+      "n": 60
+    }
+  }
+}

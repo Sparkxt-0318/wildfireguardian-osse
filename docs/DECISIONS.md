@@ -273,3 +273,91 @@ impermeable too.
 *Together with D-015:* `c_lb` was lowered again, to 0.07, so that the ellipse
 stays inside the raster's competence over the whole sweep range. `LB` is 1.4 at
 4 m/s, 2.0 at 6 m/s and 2.9 at 8 m/s.
+
+---
+
+## D-017 — The forecast-value experiment lives here, in a separate package
+**Date:** 2026-09-20 · **Status:** accepted
+
+`docs/SCOPE.md` lists "forecast-value / decision-value analysis" as out of
+scope, with the reason: *the OSSE must be usable by any evaluation method;
+embedding one biases the lab.* The author has since directed that the flagship
+forecast-value experiment be built in this repository, with
+`wildfireguardian-evaluation` owning formal inference.
+
+Both concerns are met by **package separation rather than repository
+separation**. The experiment is a second top-level package,
+`src/wildfireguardian_fv/`, and the dependency is one-way:
+
+```
+wildfireguardian_fv   ---->  wildfireguardian_osse      (allowed)
+wildfireguardian_osse ---->  wildfireguardian_fv        (forbidden)
+```
+
+`tests/fv/test_package_separation.py` walks the laboratory's import graph and
+fails if any laboratory module imports the experiment layer. The laboratory
+therefore still does not know that this evaluation method exists, which is the
+property `SCOPE.md` was protecting. `SCOPE.md` is amended to say so.
+
+*Rejected:* (a) building it in `wildfireguardian-forecast-value`, which exists —
+the author directed otherwise, and the experiment needs the laboratory's
+internals (`available_at`, the seed registry, the nature truth object) at a
+level the on-disk world format does not expose; (b) adding it inside
+`wildfireguardian_osse`, which would make the laboratory depend on one
+evaluation method and break the property above.
+
+*Consequence:* two packages ship from this repository. A consumer that wants
+only the laboratory installs and imports `wildfireguardian_osse` and is
+unaffected. The experiment's randomness uses its own hash namespace
+(`wgfv|v1`), disjoint from the laboratory's (`wgosse|v1`), so no experiment-side
+draw can perturb a hidden world.
+
+---
+
+## D-018 — Mission feasibility enters through an adapter contract
+**Date:** 2026-09-20 · **Status:** accepted
+
+`wildfireguardian-assisted-dispatch` is the intended source of mission
+feasibility semantics. It is not importable in this run (D-001, and the package
+is not vendored here), and reimplementing its
+`base → resident → pickup → destination` logic inside the OSSE would create
+exactly the coupling D-001 forbids.
+
+Instead `wildfireguardian_fv/dispatch.py` defines the **contract**
+(`MissionFeasibilityAdapter`) and ships a minimal internal implementation
+labelled `INTERNAL_PLACEHOLDER_V1` in every record it produces. The placeholder
+carries only the four semantics the experiment depends on: the mission shape,
+full edge-traversal-interval hazard semantics, an explicit pickup duration, and
+a single hazard-field type used for both belief-side and truth-side evaluation.
+
+*Rejected:* a bespoke internal dispatch model with no contract — it would have
+been silently unreplaceable, and every result would have been about it rather
+than about forecast value.
+
+*Consequence:* replacing the placeholder is a one-class change. Until it is
+replaced, no result from this experiment may be described as using assisted
+dispatch semantics; it uses a labelled placeholder that satisfies the contract.
+See `docs/DISPATCH_ADAPTER.md`.
+
+---
+
+## D-019 — The independent planner is blind to terrain, fuel detail and spotting
+**Date:** 2026-09-20 · **Status:** accepted
+
+Mode B (`INDEPENDENT_MODEL_FORECAST`) fits one growing ellipse to the observed
+detections and extrapolates. It has **no** terrain term, no fuel term beyond the
+published coarse class under its own mapping, and no spotting term. Its rate law
+is additive-linear in wind speed where nature's is multiplicative in a power of
+it.
+
+*Rejected:* a planner that mirrors the nature model with added noise. That is
+the degenerate experiment the OSSE exists to avoid: the forecast's error would
+be a parameter someone chose rather than a consequence of the model being
+different, and the resulting "forecast value" would measure the noise setting.
+
+*Consequence:* Mode B's errors are emergent and generally under-predict spread
+(its head rate is slower than nature's at the wind speeds swept here). That is a
+property of the declared planner, is measured rather than assumed, and is stated
+wherever a Mode B number is reported. Removing any of the three blind spots
+requires a new decision entry: `tests/fv/test_planner_independence.py` asserts
+their absence against the module's executable source.

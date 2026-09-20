@@ -16,9 +16,11 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
+figures = ["matplotlib>=3.6"]
 
 [project.scripts]
 wg-osse = "wildfireguardian_osse.cli.main:main"
+wg-fv = "wildfireguardian_fv.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

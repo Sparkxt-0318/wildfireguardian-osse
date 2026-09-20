@@ -22,6 +22,20 @@
 * Leakage, timing, determinism and qualitative-behaviour validation.
 * A CLI: `wg-osse generate | validate | summarize` (plus `scenarios`, `selftest`).
 
+### In scope in the separate experiment package (`wildfireguardian_fv`)
+
+Added 2026-09-20 (`docs/DECISIONS.md#d-017`). One-way dependency on the
+laboratory; the laboratory never imports it.
+
+* The information-set gate `D_s`, and the leakage audit around it.
+* Two forecast-generation modes: an independent simplified planner model, and
+  controlled perturbation of hidden truth.
+* A tuned trigger/buffer baseline, a forecast-aware policy, and an oracle
+  reference that is explicitly not operational.
+* Mission feasibility through an adapter contract (`docs/DISPATCH_ADAPTER.md`).
+* Paired-world experiment generation and record export for
+  `wildfireguardian-evaluation`, which owns formal inference.
+
 ## Out of scope (hard boundaries)
 
 These are **not** to be added to this repository. If a task appears to require
@@ -31,13 +45,13 @@ one, stop and record it in `tasks/CURRENT.md` instead of implementing it.
 |---|---|
 | Routing / road-network exposure | Belongs to the routing repository. Importing it here would couple the OSSE to a consumer. |
 | Evacuation or rescue outcome models | Same. Also requires behavioural assumptions this repo cannot validate. |
-| Forecast-value / decision-value analysis | The OSSE must be usable by *any* evaluation method; embedding one biases the lab. |
+| Forecast-value / decision-value analysis **inside `wildfireguardian_osse`** | The OSSE must be usable by *any* evaluation method; embedding one biases the lab. Since 2026-09-20 the forecast-value experiment lives in a **separate top-level package**, `wildfireguardian_fv`, which depends on the laboratory one-way and which the laboratory must never import (`docs/DECISIONS.md#d-017`). The property this row protects is preserved: the laboratory does not know the experiment exists. |
 | Real observational data ingestion | Would reintroduce the missing-counterfactual problem the OSSE exists to avoid. |
 | Named real sensors (e.g. any specific satellite instrument) | Specifications have not been verified here. See `docs/DECISIONS.md#d-002`. |
 | Operational fire forecasting claims | The nature model is explicitly not an operational model. |
 | CFD, WRF-SFIRE, or any coupled fire–atmosphere solver | Phase 1 requires transparency and speed, not fidelity. See `docs/DECISIONS.md#d-003`. |
 | Network calls at generation time | Reproducibility. Generation is pure-local and offline. |
-| Integration with another WildfireGuardian repository | Explicitly deferred; see `tasks/ROADMAP.md`. |
+| Integration with another WildfireGuardian repository | Explicitly deferred; see `tasks/ROADMAP.md`. Mission feasibility enters through an adapter contract with a labelled internal placeholder instead (`docs/DECISIONS.md#d-018`, `docs/DISPATCH_ADAPTER.md`). |
 
 ## Dependency policy
 

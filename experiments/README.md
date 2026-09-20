@@ -85,3 +85,44 @@ not a source.
 batch, kept as a result record so the repository carries evidence of what the
 laboratory produced without committing ~2 GB of worlds. Regenerate the batch
 from the manifest and `master_seed: 20260919` to reproduce it exactly.
+
+## `forecast_value_mve/`
+
+The flagship forecast-value minimum viable experiment, run by the separate
+`wildfireguardian_fv` package (`docs/DECISIONS.md#d-017`). Its question:
+
+> How accurate, and how timely, must a wildfire forecast be before
+> forecast-aware protective action outperforms a strong tuned trigger/buffer
+> policy under hidden ground truth?
+
+```text
+experiments/forecast_value_mve/
+    PROTOCOL.md          frozen before the final split was read
+    config/              tuned policy parameters (validation split only)
+    manifests/           one run manifest per stage
+    raw_outputs/         outcome rows, paired deltas, frontier, benchmarks
+    figures/             the five required figures
+    reports/             method, results, leakage audit, frontier, failures,
+                         limitations, readiness
+```
+
+```bash
+pip install -e '.[dev,figures]'
+wg-fv tune --n-worlds 16      # validation worlds only; the final split is locked
+wg-fv benchmarks              # constructed validation cases, development worlds
+wg-fv run A && wg-fv run B    # staged
+wg-fv frontier B && wg-fv figures B
+wg-fv run C --freeze-ack      # final split, one pass
+```
+
+Outcome rows (`raw_outputs/outcomes_stage*.csv.gz`) are the handoff to
+`wildfireguardian-evaluation`, which owns formal inference. The column order is
+frozen in `records.OUTCOME_COLUMNS`. They are gzipped because a stage's rows
+compress about sixty-fold; `gzip` needs nothing from this package and every
+mainstream CSV reader opens `.csv.gz` directly, so the dependency-free output
+contract in `docs/SCOPE.md` still holds. Each manifest records the SHA-256 of
+the **uncompressed** content, so the hash verifies the rows rather than the
+archive.
+
+**Every result is synthetic and not Korean-anchored.** No Korean DEM, fuel map,
+road network, village archetype or weather regime constrains any world.

@@ -2,8 +2,9 @@
 
 ## Active
 
-Nothing in progress. Phase 1 is complete (`tasks/COMPLETED.md`); Phase 2 has not
-been started and should not be until the Phase 1 limitations below have been
+Nothing in progress. Phase 1 (the laboratory) and Phase 1b (the forecast-value
+experiment) are both complete — see `tasks/COMPLETED.md`. Phase 2 has not been
+started and should not be until the Phase 1 limitations below have been
 reviewed.
 
 ## Next up (from `tasks/ROADMAP.md`, highest value first)
@@ -22,17 +23,37 @@ reviewed.
    depend on intensity rather than on burning area alone
    (`docs/ASSUMPTIONS.md#D-03`).
 
-## Deferred — out of scope here (`docs/SCOPE.md`)
+## Deferred — out of scope for the laboratory package (`docs/SCOPE.md`)
 
-Recorded rather than implemented. If a task seems to need one of these, it
-belongs in another repository.
+Recorded rather than implemented **inside `wildfireguardian_osse`**. The
+laboratory must never import any of these, and a test enforces it
+(`tests/fv/test_package_separation.py`).
 
-* Routing / road-network exposure.
-* Evacuation and assisted-rescue outcome models.
-* Forecast-value or decision-value analysis.
 * Ingestion of real observational data.
 * Any integration with another WildfireGuardian repository
-  (`docs/DECISIONS.md#d-001`).
+  (`docs/DECISIONS.md#d-001`). Mission feasibility enters the experiment
+  package through an adapter contract instead (`docs/DECISIONS.md#d-018`).
+
+Now built in the **separate** `wildfireguardian_fv` package, one-way dependent
+on the laboratory (`docs/DECISIONS.md#d-017`):
+
+* Road-network exposure, as planner-visible static context.
+* Assisted-evacuation outcome modelling, through the adapter contract.
+* Forecast-value / decision-value analysis
+  (`experiments/forecast_value_mve/`).
+
+## Next up for the forecast-value experiment
+
+The full list, with what each one blocks, is in
+`experiments/forecast_value_mve/reports/MVE_READINESS.md`. The three that most
+limit what can currently be claimed:
+
+1. **The dispatch placeholder.** Until it is replaced, no result may be
+   described as using assisted-dispatch semantics.
+2. **No responder resource constraint.** No number is a population or system
+   protection rate, and the phrase must not appear.
+3. **Only two error families are swept.** Spread-rate bias, displacement and
+   missed spotting are specified and unswept.
 
 ## Open questions for Agent A (Model Auditor)
 
@@ -44,6 +65,10 @@ belongs in another repository.
   (`docs/DECISIONS.md#d-006`). Combined with a detection, how much does the
   static context narrow the fire's future? Believed small because ignition,
   wind and the spread parameters are all hidden — but believed, not measured.
+* **The static-context channel, now measurable.** The forecast-value
+  experiment gives a way to ask the question below quantitatively: run the
+  independent planner with and without static context and compare skill. It has
+  not been run (`reports/LEAKAGE_AUDIT.md#5`).
 * **`UNKNOWN` quantities.** `docs/ASSUMPTIONS.md` lists six. The two that most
   limit interpretation are `C-07` (calibrated rate of spread for Korean fuels)
   and `D-08` (real sensor detection probability, cadence and latency). Either

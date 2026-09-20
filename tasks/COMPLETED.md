@@ -108,3 +108,89 @@ x spotting on/off (2) x detection latency (2). Summary kept at
 | summary statistics produced | yes — `wg-osse summarize` |
 | limitations documented | yes — `README.md`, `docs/VALIDATION.md#5`, `docs/FAILURE_MODES.md` |
 | not integrated with another repo | correct — explicitly deferred (`docs/DECISIONS.md#d-001`) |
+
+---
+
+# Phase 1b — the forecast-value experiment (2026-09-20)
+
+Built in the separate `wildfireguardian_fv` package, one-way dependent on the
+laboratory (`docs/DECISIONS.md#d-017`). Outcomes only; the reasoning is in
+`docs/DECISIONS.md` and `experiments/forecast_value_mve/PROTOCOL.md`.
+
+## Agent A — Model Auditor
+
+* **The hidden-variable boundary extended to the planner.** One gate,
+  `info.build_information_set`, with four independent enforcement layers:
+  structure (no object path from `D_s` to truth), a construction-time audit
+  (availability, forbidden names, seed values), an execution-time guard that
+  makes any read of a `truth/` artefact raise, and an import-graph test.
+* **Forecast semantics specified before implementation** — issue time, valid
+  window, horizon, representation, uncertainty slot. A product whose valid
+  window starts before its issue time is refused at construction: a
+  current-state estimate is not a forecast.
+* **Error families classified by provenance** (`TOY_MECHANISM`,
+  `STRESS_TEST`, `EMPIRICALLY_MOTIVATED`, `LEARNED`). None is empirically
+  motivated in this run, so every result is stated conditionally rather than
+  given an invented likelihood.
+* **The world-generation audit** labels all ten generation distributions
+  `ASSUMED` or `STRESS-TEST`. **None is `DATA-INFORMED`**, so no world here may
+  be called Korean.
+
+## Agent B — Implementation Engineer
+
+* **Experiment-side random streams** in a namespace (`wgfv|v1`) disjoint from
+  the laboratory's (`wgosse|v1`), so the village cannot move the fire.
+* **Village, road graph and residents** as planner-visible static context.
+* **Mission feasibility as an adapter contract** plus a labelled internal
+  placeholder (`docs/DECISIONS.md#d-018`, `docs/DISPATCH_ADAPTER.md`).
+* **Two forecast modes** — controlled perturbation of truth, and a structurally
+  independent ellipse-fitting planner with three declared blind spots
+  (`docs/DECISIONS.md#d-019`).
+* **One shared decision loop** for every policy, so the comparison isolates the
+  belief and nothing else.
+* **Tuned trigger/buffer baseline** (144 configurations), forecast-aware policy
+  (120 configurations per mode), two secondary baselines, and an oracle
+  reference named `NOT_OPERATIONAL`.
+* **Break-even estimation** that reports `NO_CROSSING`, `MULTIPLE_CROSSINGS`
+  and `UNRESOLVED` rather than drawing a curve through unsupported regions.
+* **`wg-fv` CLI**: `tune`, `benchmarks`, `run`, `frontier`, `summary`,
+  `figures`.
+
+## Agent C — Red-Team Validator
+
+Findings, and what each one changed:
+
+* **The laboratory's `conftest.py` was shadowed** by the new test package on
+  `sys.path`, silently breaking every laboratory test's imports. Fixed by
+  making `tests/fv/` a package.
+* **The baseline strangled itself.** One buffer served both the dispatch
+  trigger and the route-usability test, so triggering guaranteed that no route
+  was usable: it fired and then refused to move, dispatching in 0 of 6 cases.
+  Split into a trigger buffer and a routing buffer, both tuned.
+* **The same defect, left in the forecast-aware policy, made the comparison a
+  straw man** — it acted on 16% of decisions against the baseline's 71%, and
+  the asymmetry rather than the forecast was doing the work. Found by reading
+  validation-split failure compositions; fixed, and every stage re-run
+  (`PROTOCOL.md` §18, freeze 2).
+* **Tuning the forecast-aware policy against the weaker forecast only** carried
+  those parameters into the accurate-forecast mode and measured the wrong
+  thing. Tuning is now per mode (`PROTOCOL.md` §18, freeze 3).
+* **The frontier classifier could not see a crossing it had bracketed well.**
+  It required the two sides of a sign change to be adjacent, but the cell
+  nearest zero is exactly the cell whose interval covers zero. Brackets are now
+  sought between consecutive *resolved* points and flagged when they span an
+  unresolved cell.
+* **A burning house was reported as a routing failure.** Feasibility now checks
+  the resident before the roads, because "no route to the resident" is then
+  true but useless and the failure taxonomy depends on the distinction.
+* **Three tests asserted on docstrings rather than code**, so improving the
+  documentation broke them. They now inspect the executable source with
+  docstrings stripped.
+* **Attack tests that must fail** — injecting a forbidden field name, injecting
+  a seed value, reading a `truth/` artefact under the guard, tuning on
+  non-validation worlds, reading the final split while locked, a forecast valid
+  before it is issued, a forecast available before it is issued, and
+  per-mode parameters reaching the wrong mode. A leakage detector that has
+  never fired is not evidence of anything.
+
+65 experiment tests, on top of the laboratory's 156.

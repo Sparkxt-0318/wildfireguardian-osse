@@ -1,0 +1,197 @@
+{
+  "banner": "SYNTHETIC OSSE RESULT -- generic synthetic worlds, not Korean-anchored. Statements apply to the declared nature and observation models only.",
+  "tuned": true,
+  "split": "validation",
+  "n_worlds": 16,
+  "master_seed": 20260920,
+  "baseline": {
+    "best": {
+      "b0_m": 1000.0,
+      "b1_m_per_ms_per_min": 0.0,
+      "b2_min": 10.0,
+      "route_buffer_frac": 0.15
+    },
+    "best_mean_loss": 0.2019484521453373,
+    "n_configurations": 144,
+    "n_worlds": 16,
+    "split": "validation",
+    "top5": [
+      {
+        "config": {
+          "b0_m": 1000.0,
+          "b1_m_per_ms_per_min": 0.0,
+          "b2_min": 10.0,
+          "route_buffer_frac": 0.15
+        },
+        "mean_loss": 0.2019484521453373
+      },
+      {
+        "config": {
+          "b0_m": 1000.0,
+          "b1_m_per_ms_per_min": 0.0,
+          "b2_min": 20.0,
+          "route_buffer_frac": 0.15
+        },
+        "mean_loss": 0.2019484521453373
+      },
+      {
+        "config": {
+          "b0_m": 200.0,
+          "b1_m_per_ms_per_min": 6.0,
+          "b2_min": 20.0,
+          "route_buffer_frac": 0.35
+        },
+        "mean_loss": 0.2107090807663691
+      },
+      {
+        "config": {
+          "b0_m": 400.0,
+          "b1_m_per_ms_per_min": 6.0,
+          "b2_min": 10.0,
+          "route_buffer_frac": 0.35
+        },
+        "mean_loss": 0.21359924094742067
+      },
+      {
+        "config": {
+          "b0_m": 1000.0,
+          "b1_m_per_ms_per_min": 0.0,
+          "b2_min": 10.0,
+          "route_buffer_frac": 0.35
+        },
+        "mean_loss": 0.21544732287326393
+      }
+    ],
+    "edge_optima": [
+      "b1_m_per_ms_per_min=0.0 is at the edge of [0.0, 6.0, 12.0]"
+    ]
+  },
+  "forecast_aware_by_mode": {
+    "INDEPENDENT_MODEL_FORECAST": {
+      "best": {
+        "allow_wait": false,
+        "lead_min": 30.0,
+        "route_buffer_m": 150.0,
+        "visible_threat_buffer_m": 700.0
+      },
+      "best_mean_loss": 0.22198370681733628,
+      "n_configurations": 120,
+      "n_worlds": 16,
+      "split": "validation",
+      "top5": [
+        {
+          "config": {
+            "allow_wait": false,
+            "lead_min": 30.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 700.0
+          },
+          "mean_loss": 0.22198370681733628
+        },
+        {
+          "config": {
+            "allow_wait": true,
+            "lead_min": 30.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 700.0
+          },
+          "mean_loss": 0.22198370681733628
+        },
+        {
+          "config": {
+            "allow_wait": false,
+            "lead_min": 60.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 700.0
+          },
+          "mean_loss": 0.22198370681733628
+        },
+        {
+          "config": {
+            "allow_wait": true,
+            "lead_min": 60.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 700.0
+          },
+          "mean_loss": 0.22198370681733628
+        },
+        {
+          "config": {
+            "allow_wait": false,
+            "lead_min": 90.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 700.0
+          },
+          "mean_loss": 0.2219837068173363
+        }
+      ],
+      "edge_optima": [
+        "lead_min=30.0 is at the edge of [30.0, 60.0, 90.0]"
+      ]
+    },
+    "CONTROLLED_PERTURBATION": {
+      "best": {
+        "allow_wait": false,
+        "lead_min": 90.0,
+        "route_buffer_m": 150.0,
+        "visible_threat_buffer_m": 150.0
+      },
+      "best_mean_loss": 0.07744030502852182,
+      "n_configurations": 120,
+      "n_worlds": 16,
+      "split": "validation",
+      "top5": [
+        {
+          "config": {
+            "allow_wait": false,
+            "lead_min": 90.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 150.0
+          },
+          "mean_loss": 0.07744030502852182
+        },
+        {
+          "config": {
+            "allow_wait": true,
+            "lead_min": 90.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 150.0
+          },
+          "mean_loss": 0.07744030502852182
+        },
+        {
+          "config": {
+            "allow_wait": false,
+            "lead_min": 90.0,
+            "route_buffer_m": 50.0,
+            "visible_threat_buffer_m": 150.0
+          },
+          "mean_loss": 0.08433057045820933
+        },
+        {
+          "config": {
+            "allow_wait": true,
+            "lead_min": 90.0,
+            "route_buffer_m": 50.0,
+            "visible_threat_buffer_m": 150.0
+          },
+          "mean_loss": 0.08433057045820933
+        },
+        {
+          "config": {
+            "allow_wait": false,
+            "lead_min": 90.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 400.0
+          },
+          "mean_loss": 0.08755641587301588
+        }
+      ],
+      "edge_optima": [
+        "lead_min=90.0 is at the edge of [30.0, 60.0, 90.0]",
+        "visible_threat_buffer_m=150.0 is at the edge of [150.0, 400.0, 700.0, 1000.0, 1400.0]"
+      ]
+    }
+  },
+  "note": "The forecast-aware policy is tuned once per forecast mode, at the undegraded condition, and is then held fixed across every error regime within that mode. Tuning it only against the weaker forecast would confound 'an accurate forecast is not worth acting on' with 'this policy was set up not to act on one'."
+}

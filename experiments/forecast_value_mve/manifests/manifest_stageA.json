@@ -1,0 +1,957 @@
+{
+  "banner": "SYNTHETIC OSSE RESULT -- generic synthetic worlds, not Korean-anchored. Statements apply to the declared nature and observation models only.",
+  "config": {
+    "baseline_params": {
+      "b0_m": 1000.0,
+      "b1_m_per_ms_per_min": 0.0,
+      "b2_min": 10.0,
+      "route_buffer_frac": 0.15
+    },
+    "error_grid": {
+      "direction_bias_deg": [
+        0.0,
+        10.0,
+        20.0,
+        35.0,
+        55.0
+      ],
+      "extra_conditions": [],
+      "latency_min": [
+        0.0,
+        5.0,
+        15.0,
+        30.0,
+        60.0
+      ],
+      "n_conditions": 25
+    },
+    "forecast_params_by_mode": {
+      "CONTROLLED_PERTURBATION": {
+        "allow_wait": false,
+        "forecast_cadence_min": 15.0,
+        "lead_min": 90.0,
+        "max_wait_min": 20.0,
+        "route_buffer_m": 150.0,
+        "visible_threat_buffer_m": 150.0
+      },
+      "INDEPENDENT_MODEL_FORECAST": {
+        "allow_wait": false,
+        "forecast_cadence_min": 15.0,
+        "lead_min": 30.0,
+        "max_wait_min": 20.0,
+        "route_buffer_m": 150.0,
+        "visible_threat_buffer_m": 700.0
+      }
+    },
+    "generation_audit": {
+      "fuel_heterogeneity": {
+        "class": "ASSUMED",
+        "spec": "Per-archetype: patchy lognormal-like patches, or a non-burnable band",
+        "why": "Transparent synthetic heterogeneity; no fuel map is used."
+      },
+      "ignition_bearing_deg": {
+        "class": "ASSUMED",
+        "spec": "Upwind bearing from the village +/- Uniform(-70, 70) deg",
+        "why": "Biases towards worlds where the village is downwind, without guaranteeing it: a substantial fraction of worlds never threaten the village, which is what makes unnecessary dispatch measurable."
+      },
+      "ignition_distance_m": {
+        "class": "ASSUMED",
+        "spec": "Uniform(1400, 3000) from the village centre",
+        "why": "Chosen so the fire-to-village race is decidable within the horizon at the modelled spread rates. No observational basis."
+      },
+      "resident_capability": {
+        "class": "ASSUMED",
+        "spec": "Bernoulli(0.45) self-evacuation capable, independent of route existence",
+        "why": "Capability is an assumption about people, never an inference from the road graph (PROTOCOL.md section 6)."
+      },
+      "route_topology": {
+        "class": "ASSUMED",
+        "spec": "Perturbed 6x6 lattice, 72% of minor edges retained, connectivity restored deterministically",
+        "why": "A lattice is transparent and gives alternative routes. Rural Korean road networks are dendritic, not lattices -- recorded as a limitation."
+      },
+      "spotting": {
+        "class": "STRESS-TEST",
+        "spec": "Enabled in 40% of worlds at the laboratory default rate",
+        "why": "Spotting is one of the two mechanisms the experiment studies; its prevalence here is a design choice, not a measured frequency."
+      },
+      "terrain": {
+        "class": "ASSUMED",
+        "spec": "Per-archetype: flat / planar slope / ridge / smooth noise",
+        "why": "Synthetic. No DEM is used (PROTOCOL.md section 14)."
+      },
+      "village_geometry": {
+        "class": "ASSUMED",
+        "spec": "6 houses within 900 m of the domain centre; base at one corner; two destinations at far corners",
+        "why": "Terrain-independent placement. No village archetype data is used."
+      },
+      "wind_direction_deg": {
+        "class": "ASSUMED",
+        "spec": "Uniform(0, 360) deg (direction the wind blows toward, CCW from east)",
+        "why": "No regime information is available, so the least-committal choice is used."
+      },
+      "wind_shift": {
+        "class": "STRESS-TEST",
+        "spec": "35% of worlds shift direction by Uniform(35, 85) deg at a time in the middle third of the horizon",
+        "why": "Creates the forecast-relevant mechanism (a turn the planner cannot see coming) at a declared rate; the rate is not an estimate of how often real wind shifts."
+      },
+      "wind_speed_ms": {
+        "class": "STRESS-TEST",
+        "spec": "Uniform(2.5, 6.0) m/s, constant or a single shift",
+        "why": "Upper bound is the laboratory's validated stencil limit (docs/VALIDATION.md#4), not a meteorological statement."
+      }
+    },
+    "loss_weights": {
+      "exposure_scale_min": 10.0,
+      "loss_version": "fv-loss-v1",
+      "travel_scale_min": 60.0,
+      "w_exposure": 0.15,
+      "w_fail": 1.0,
+      "w_resource": 0.05,
+      "w_travel": 0.05,
+      "w_unnecessary": 0.25
+    },
+    "modes": [
+      "INDEPENDENT_MODEL_FORECAST",
+      "CONTROLLED_PERTURBATION"
+    ],
+    "n_worlds": 12,
+    "stage": {
+      "n_worlds": 12,
+      "purpose": "debug semantics",
+      "split": "development"
+    },
+    "tuning": {
+      "banner": "SYNTHETIC OSSE RESULT -- generic synthetic worlds, not Korean-anchored. Statements apply to the declared nature and observation models only.",
+      "baseline": {
+        "best": {
+          "b0_m": 1000.0,
+          "b1_m_per_ms_per_min": 0.0,
+          "b2_min": 10.0,
+          "route_buffer_frac": 0.15
+        },
+        "best_mean_loss": 0.2019484521453373,
+        "edge_optima": [
+          "b1_m_per_ms_per_min=0.0 is at the edge of [0.0, 6.0, 12.0]"
+        ],
+        "n_configurations": 144,
+        "n_worlds": 16,
+        "split": "validation",
+        "top5": [
+          {
+            "config": {
+              "b0_m": 1000.0,
+              "b1_m_per_ms_per_min": 0.0,
+              "b2_min": 10.0,
+              "route_buffer_frac": 0.15
+            },
+            "mean_loss": 0.2019484521453373
+          },
+          {
+            "config": {
+              "b0_m": 1000.0,
+              "b1_m_per_ms_per_min": 0.0,
+              "b2_min": 20.0,
+              "route_buffer_frac": 0.15
+            },
+            "mean_loss": 0.2019484521453373
+          },
+          {
+            "config": {
+              "b0_m": 200.0,
+              "b1_m_per_ms_per_min": 6.0,
+              "b2_min": 20.0,
+              "route_buffer_frac": 0.35
+            },
+            "mean_loss": 0.2107090807663691
+          },
+          {
+            "config": {
+              "b0_m": 400.0,
+              "b1_m_per_ms_per_min": 6.0,
+              "b2_min": 10.0,
+              "route_buffer_frac": 0.35
+            },
+            "mean_loss": 0.21359924094742067
+          },
+          {
+            "config": {
+              "b0_m": 1000.0,
+              "b1_m_per_ms_per_min": 0.0,
+              "b2_min": 10.0,
+              "route_buffer_frac": 0.35
+            },
+            "mean_loss": 0.21544732287326393
+          }
+        ]
+      },
+      "forecast_aware_by_mode": {
+        "CONTROLLED_PERTURBATION": {
+          "best": {
+            "allow_wait": false,
+            "lead_min": 90.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 150.0
+          },
+          "best_mean_loss": 0.07744030502852182,
+          "edge_optima": [
+            "lead_min=90.0 is at the edge of [30.0, 60.0, 90.0]",
+            "visible_threat_buffer_m=150.0 is at the edge of [150.0, 400.0, 700.0, 1000.0, 1400.0]"
+          ],
+          "n_configurations": 120,
+          "n_worlds": 16,
+          "split": "validation",
+          "top5": [
+            {
+              "config": {
+                "allow_wait": false,
+                "lead_min": 90.0,
+                "route_buffer_m": 150.0,
+                "visible_threat_buffer_m": 150.0
+              },
+              "mean_loss": 0.07744030502852182
+            },
+            {
+              "config": {
+                "allow_wait": true,
+                "lead_min": 90.0,
+                "route_buffer_m": 150.0,
+                "visible_threat_buffer_m": 150.0
+              },
+              "mean_loss": 0.07744030502852182
+            },
+            {
+              "config": {
+                "allow_wait": false,
+                "lead_min": 90.0,
+                "route_buffer_m": 50.0,
+                "visible_threat_buffer_m": 150.0
+              },
+              "mean_loss": 0.08433057045820933
+            },
+            {
+              "config": {
+                "allow_wait": true,
+                "lead_min": 90.0,
+                "route_buffer_m": 50.0,
+                "visible_threat_buffer_m": 150.0
+              },
+              "mean_loss": 0.08433057045820933
+            },
+            {
+              "config": {
+                "allow_wait": false,
+                "lead_min": 90.0,
+                "route_buffer_m": 150.0,
+                "visible_threat_buffer_m": 400.0
+              },
+              "mean_loss": 0.08755641587301588
+            }
+          ]
+        },
+        "INDEPENDENT_MODEL_FORECAST": {
+          "best": {
+            "allow_wait": false,
+            "lead_min": 30.0,
+            "route_buffer_m": 150.0,
+            "visible_threat_buffer_m": 700.0
+          },
+          "best_mean_loss": 0.22198370681733628,
+          "edge_optima": [
+            "lead_min=30.0 is at the edge of [30.0, 60.0, 90.0]"
+          ],
+          "n_configurations": 120,
+          "n_worlds": 16,
+          "split": "validation",
+          "top5": [
+            {
+              "config": {
+                "allow_wait": false,
+                "lead_min": 30.0,
+                "route_buffer_m": 150.0,
+                "visible_threat_buffer_m": 700.0
+              },
+              "mean_loss": 0.22198370681733628
+            },
+            {
+              "config": {
+                "allow_wait": true,
+                "lead_min": 30.0,
+                "route_buffer_m": 150.0,
+                "visible_threat_buffer_m": 700.0
+              },
+              "mean_loss": 0.22198370681733628
+            },
+            {
+              "config": {
+                "allow_wait": false,
+                "lead_min": 60.0,
+                "route_buffer_m": 150.0,
+                "visible_threat_buffer_m": 700.0
+              },
+              "mean_loss": 0.22198370681733628
+            },
+            {
+              "config": {
+                "allow_wait": true,
+                "lead_min": 60.0,
+                "route_buffer_m": 150.0,
+                "visible_threat_buffer_m": 700.0
+              },
+              "mean_loss": 0.22198370681733628
+            },
+            {
+              "config": {
+                "allow_wait": false,
+                "lead_min": 90.0,
+                "route_buffer_m": 150.0,
+                "visible_threat_buffer_m": 700.0
+              },
+              "mean_loss": 0.2219837068173363
+            }
+          ]
+        }
+      },
+      "master_seed": 20260920,
+      "n_worlds": 16,
+      "note": "The forecast-aware policy is tuned once per forecast mode, at the undegraded condition, and is then held fixed across every error regime within that mode. Tuning it only against the weaker forecast would confound 'an accurate forecast is not worth acting on' with 'this policy was set up not to act on one'.",
+      "split": "validation",
+      "tuned": true
+    },
+    "world_generation": {
+      "cell_size_m": 30.0,
+      "dt_min": 1.0,
+      "horizon_min": 240.0,
+      "master_seed": 20260920,
+      "nx": 192,
+      "ny": 192
+    }
+  },
+  "config_hash": "d1e5949981329d89edf5e58ba1bc8aa63a9709b9151f89128c841acfc0c2f8c2",
+  "created_utc": "2026-09-20T04:44:42.494085Z",
+  "data_hashes": {
+    "outcomes_stageA.csv.gz": "4eb3434628b056d56757db95e06aeb450ff34d8014cff9ce1a5c0969b0edfc04"
+  },
+  "experiment_id": "fv_mve_stageA_20260920",
+  "git_commit": "a27a2ee38f156c4302e084e3730902672dd958eb",
+  "git_dirty": true,
+  "notes": "final_split_reads=0; {'n_worlds': 12, 'n_conditions': 25, 'modes': ['INDEPENDENT_MODEL_FORECAST', 'CONTROLLED_PERTURBATION'], 'n_rows': 3672, 'splits': ['development']}; rows stored gzipped (outcomes_stageA.csv.gz); the recorded hash is of the uncompressed CSV content and is unchanged by the compression",
+  "platform": "Linux-6.18.44-fc-v37-x86_64-with-glibc2.39",
+  "python": "3.11.15",
+  "seed_manifest": {
+    "fv_namespace": "wgfv|v1",
+    "lab_namespace": "wgosse|v1",
+    "master_seed": 20260920,
+    "streams": [
+      {
+        "derived_stream_seeds": {
+          "master_seed": 14519520611753069476,
+          "missingness_seed": 9525664279681897444,
+          "nature_seed": 7798794236306755719,
+          "sensor_seed": 12710932336816017037,
+          "spotting_seed": 3883109381142129979,
+          "weather_seed": 16888787950255589951
+        },
+        "master_seed": 20260920,
+        "world_id": 65000
+      }
+    ]
+  },
+  "stage": "A",
+  "versions": {
+    "baseline": "fv-baseline-trigger-buffer-v1",
+    "degradation_model": "fv-degradation-v1",
+    "dispatch_adapter": "fv-internal-placeholder-v1",
+    "fv": "0.1.0",
+    "loss": "fv-loss-v1",
+    "nature_model": "Synthetic nature model for controlled experiments; not an operational wildfire forecast model.",
+    "observation_model": "1.0.0",
+    "osse_generator": "1.0.0",
+    "planner_model": "fv-planner-v1",
+    "policy": "fv-forecast-aware-v1",
+    "world_generator": "fv-worlds-v1"
+  },
+  "world_index": [
+    {
+      "archetype": "open_plain",
+      "config_hash": "545ee6c5b93e466753f94240b0a8e88c8df227356b10ef3266665276d9d0ca47",
+      "event_id": "open_plain-65000",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 4927365509626185368,
+          "perturbation_seed": 10024798108200306421,
+          "policy_seed": 4842484265813524065,
+          "resident_seed": 1858088421666447261,
+          "world_layout_seed": 9598784362340572436
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65000
+      },
+      "generation_audit": {
+        "archetype": "open_plain",
+        "attempt": 0,
+        "burned_area_ha": 648.99,
+        "ignition_bearing_offset_deg": 42.925510323187055,
+        "ignition_distance_m": 2952.9022906072414,
+        "ignition_xy_m": [
+          5596.760854757973,
+          1722.9164265584686
+        ],
+        "n_spot_events": 83,
+        "split": "development",
+        "spotting_enabled": true,
+        "wind_dir_deg": 114.00506477353736,
+        "wind_shift": null,
+        "wind_speed_ms": 4.568463964055556,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 14519520611753069476,
+          "missingness_seed": 9525664279681897444,
+          "nature_seed": 7798794236306755719,
+          "sensor_seed": 12710932336816017037,
+          "spotting_seed": 3883109381142129979,
+          "weather_seed": 16888787950255589951
+        },
+        "master_seed": 20260920,
+        "world_id": 65000
+      },
+      "split": "development",
+      "world_id": 65000
+    },
+    {
+      "archetype": "rolling_noise",
+      "config_hash": "a1299677ccaf824095590f678e42f30a85e0067719cb07cb215cf58d48538022",
+      "event_id": "rolling_noise-65001",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 15443693568696134788,
+          "perturbation_seed": 12628491995392115699,
+          "policy_seed": 5608675799303092688,
+          "resident_seed": 18036142503472687597,
+          "world_layout_seed": 2349521607875175949
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65001
+      },
+      "generation_audit": {
+        "archetype": "rolling_noise",
+        "attempt": 0,
+        "burned_area_ha": 581.22,
+        "ignition_bearing_offset_deg": -17.10528806635063,
+        "ignition_distance_m": 2756.059846488734,
+        "ignition_xy_m": [
+          5501.194532198357,
+          3731.5897497040123
+        ],
+        "n_spot_events": 0,
+        "split": "development",
+        "spotting_enabled": false,
+        "wind_dir_deg": 215.1035485380266,
+        "wind_shift": null,
+        "wind_speed_ms": 3.7005144687065887,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 4854553485932269778,
+          "missingness_seed": 3988965517110706945,
+          "nature_seed": 1473194994106573933,
+          "sensor_seed": 7287096720674257008,
+          "spotting_seed": 4494033887854804980,
+          "weather_seed": 4622214882458610803
+        },
+        "master_seed": 20260920,
+        "world_id": 65001
+      },
+      "split": "development",
+      "world_id": 65001
+    },
+    {
+      "archetype": "open_plain",
+      "config_hash": "0cd85a7ab22051d3bf9c02398096f8df71d7c9b21ad54729cd52f93853d65b89",
+      "event_id": "open_plain-65002",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 574084744064629989,
+          "perturbation_seed": 6075165996837656870,
+          "policy_seed": 16274043061118922046,
+          "resident_seed": 12691962802422472264,
+          "world_layout_seed": 15976397589536457409
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65002
+      },
+      "generation_audit": {
+        "archetype": "open_plain",
+        "attempt": 0,
+        "burned_area_ha": 459.54,
+        "ignition_bearing_offset_deg": -34.68190721917373,
+        "ignition_distance_m": 1552.9574312784482,
+        "ignition_xy_m": [
+          1331.4608771622939,
+          2762.9386126684644
+        ],
+        "n_spot_events": 0,
+        "split": "development",
+        "spotting_enabled": false,
+        "wind_dir_deg": 39.00494360594942,
+        "wind_shift": {
+          "new_dir_deg": 103.7596167178046,
+          "t_min": 84.64820448525089
+        },
+        "wind_speed_ms": 3.585000877996291,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 398586995634700011,
+          "missingness_seed": 16887939571779550487,
+          "nature_seed": 121810114885970353,
+          "sensor_seed": 3220980441114314044,
+          "spotting_seed": 16383133212981178555,
+          "weather_seed": 391558428270644387
+        },
+        "master_seed": 20260920,
+        "world_id": 65002
+      },
+      "split": "development",
+      "world_id": 65002
+    },
+    {
+      "archetype": "rolling_noise",
+      "config_hash": "f45248771076161c7b0979ad2410689164e4bf537887e2a4e726d1682f7e6bc3",
+      "event_id": "rolling_noise-65003",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 6882758702397261327,
+          "perturbation_seed": 1209737190104829554,
+          "policy_seed": 3816995949655455749,
+          "resident_seed": 6391788071932423634,
+          "world_layout_seed": 10619328624430131718
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65003
+      },
+      "generation_audit": {
+        "archetype": "rolling_noise",
+        "attempt": 0,
+        "burned_area_ha": 1126.44,
+        "ignition_bearing_offset_deg": 7.159343729081101,
+        "ignition_distance_m": 1502.6061632296341,
+        "ignition_xy_m": [
+          2235.5149803171444,
+          4237.3740608911285
+        ],
+        "n_spot_events": 149,
+        "split": "development",
+        "spotting_enabled": true,
+        "wind_dir_deg": 288.23915544165783,
+        "wind_shift": null,
+        "wind_speed_ms": 5.705278905675083,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 12558869519621146937,
+          "missingness_seed": 8975809801272489000,
+          "nature_seed": 4031304932019622630,
+          "sensor_seed": 477659316935946289,
+          "spotting_seed": 3289303583375958303,
+          "weather_seed": 7139331892252652508
+        },
+        "master_seed": 20260920,
+        "world_id": 65003
+      },
+      "split": "development",
+      "world_id": 65003
+    },
+    {
+      "archetype": "open_plain",
+      "config_hash": "123dd76d68cf07552f7aecab22f6bbf26618c0676e89591d4f58a4806de4dc6e",
+      "event_id": "open_plain-65004",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 2677299713819241250,
+          "perturbation_seed": 9970127766200108604,
+          "policy_seed": 5314511469871523635,
+          "resident_seed": 8894732754648968780,
+          "world_layout_seed": 10177812015404784476
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65004
+      },
+      "generation_audit": {
+        "archetype": "open_plain",
+        "attempt": 0,
+        "burned_area_ha": 410.04,
+        "ignition_bearing_offset_deg": -32.53532600068898,
+        "ignition_distance_m": 2953.155283378604,
+        "ignition_xy_m": [
+          5700.0,
+          2984.3161144884693
+        ],
+        "n_spot_events": 0,
+        "split": "development",
+        "spotting_enabled": false,
+        "wind_dir_deg": 214.55964106994358,
+        "wind_shift": null,
+        "wind_speed_ms": 4.132848810753009,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 17394065438615080925,
+          "missingness_seed": 1178213438174818145,
+          "nature_seed": 17807728010834514326,
+          "sensor_seed": 7625732831256809266,
+          "spotting_seed": 2548789179953133353,
+          "weather_seed": 5615627401375834288
+        },
+        "master_seed": 20260920,
+        "world_id": 65004
+      },
+      "split": "development",
+      "world_id": 65004
+    },
+    {
+      "archetype": "rolling_noise",
+      "config_hash": "4cd229d3825754f73cc7faab59308043b8870beef8f4d86372993033b59f242f",
+      "event_id": "rolling_noise-65005",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 12459192640684010879,
+          "perturbation_seed": 11765054529020714318,
+          "policy_seed": 3023933861320343838,
+          "resident_seed": 8261753559900291043,
+          "world_layout_seed": 14056969313731758116
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65005
+      },
+      "generation_audit": {
+        "archetype": "rolling_noise",
+        "attempt": 0,
+        "burned_area_ha": 547.11,
+        "ignition_bearing_offset_deg": -20.35687092260042,
+        "ignition_distance_m": 2595.836168964851,
+        "ignition_xy_m": [
+          398.36857228477766,
+          3641.4925298925928
+        ],
+        "n_spot_events": 0,
+        "split": "development",
+        "spotting_enabled": false,
+        "wind_dir_deg": 3.298156315392773,
+        "wind_shift": null,
+        "wind_speed_ms": 3.518012861820181,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 5209006473901956014,
+          "missingness_seed": 8352562367830790225,
+          "nature_seed": 15581120743640567050,
+          "sensor_seed": 1529175432376180648,
+          "spotting_seed": 592750268572262878,
+          "weather_seed": 17048815202123124724
+        },
+        "master_seed": 20260920,
+        "world_id": 65005
+      },
+      "split": "development",
+      "world_id": 65005
+    },
+    {
+      "archetype": "open_plain",
+      "config_hash": "e085b047e125f7ed3426898bd35d5bcc96cf9aba57dab325fa19bba86c72bb4c",
+      "event_id": "open_plain-65006",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 14991928754640492700,
+          "perturbation_seed": 15751410623697891865,
+          "policy_seed": 15847430243895737491,
+          "resident_seed": 12702396678718037231,
+          "world_layout_seed": 13496140010763698394
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65006
+      },
+      "generation_audit": {
+        "archetype": "open_plain",
+        "attempt": 0,
+        "burned_area_ha": 229.14,
+        "ignition_bearing_offset_deg": -20.614501045108668,
+        "ignition_distance_m": 1936.2712640218333,
+        "ignition_xy_m": [
+          3531.4346214972575,
+          4703.39774645891
+        ],
+        "n_spot_events": 0,
+        "split": "development",
+        "spotting_enabled": false,
+        "wind_dir_deg": 270.95451448818125,
+        "wind_shift": null,
+        "wind_speed_ms": 3.946765280994553,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 7910220054038559202,
+          "missingness_seed": 4270046264654230554,
+          "nature_seed": 13096868951281591850,
+          "sensor_seed": 14191020091575891653,
+          "spotting_seed": 1492055718051336563,
+          "weather_seed": 14354208062232133384
+        },
+        "master_seed": 20260920,
+        "world_id": 65006
+      },
+      "split": "development",
+      "world_id": 65006
+    },
+    {
+      "archetype": "rolling_noise",
+      "config_hash": "1243658f5d0b8f66de220b663ce2b70a85a315bf83b2aa447f6966e4bc8278fd",
+      "event_id": "rolling_noise-65007",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 17964540587577876038,
+          "perturbation_seed": 16284434694768547514,
+          "policy_seed": 5498128052046843375,
+          "resident_seed": 9744868132695988151,
+          "world_layout_seed": 3123736425166259521
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65007
+      },
+      "generation_audit": {
+        "archetype": "rolling_noise",
+        "attempt": 0,
+        "burned_area_ha": 1400.49,
+        "ignition_bearing_offset_deg": 22.28538111757868,
+        "ignition_distance_m": 2310.7313299905245,
+        "ignition_xy_m": [
+          681.7770725631708,
+          2167.753384921461
+        ],
+        "n_spot_events": 152,
+        "split": "development",
+        "spotting_enabled": true,
+        "wind_dir_deg": 355.66747125349815,
+        "wind_shift": {
+          "new_dir_deg": 314.1568361938183,
+          "t_min": 150.79709112274173
+        },
+        "wind_speed_ms": 5.328246554000561,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 8268787171130720209,
+          "missingness_seed": 15644927977303895477,
+          "nature_seed": 4778766870242281621,
+          "sensor_seed": 15389952008485028194,
+          "spotting_seed": 14873545720740612091,
+          "weather_seed": 12439405034225265552
+        },
+        "master_seed": 20260920,
+        "world_id": 65007
+      },
+      "split": "development",
+      "world_id": 65007
+    },
+    {
+      "archetype": "open_plain",
+      "config_hash": "9ca93da27aec1e84da36a2b82397938be034dcc4d2ca4b6b2fbbd8b8069c0b63",
+      "event_id": "open_plain-65008",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 2648098078783600320,
+          "perturbation_seed": 2488529812128988038,
+          "policy_seed": 5990409895202578416,
+          "resident_seed": 1624532234160653144,
+          "world_layout_seed": 8516998296159370573
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65008
+      },
+      "generation_audit": {
+        "archetype": "open_plain",
+        "attempt": 0,
+        "burned_area_ha": 436.14,
+        "ignition_bearing_offset_deg": -58.22873200738713,
+        "ignition_distance_m": 1487.1474679739802,
+        "ignition_xy_m": [
+          2126.7480333332255,
+          1597.7289419884512
+        ],
+        "n_spot_events": 0,
+        "split": "development",
+        "spotting_enabled": false,
+        "wind_dir_deg": 117.797229483221,
+        "wind_shift": null,
+        "wind_speed_ms": 3.1555973088670655,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 10787508836644604523,
+          "missingness_seed": 5343203943701131231,
+          "nature_seed": 17197855268899588144,
+          "sensor_seed": 5828241634334198744,
+          "spotting_seed": 5264936772465319799,
+          "weather_seed": 9703162446793726187
+        },
+        "master_seed": 20260920,
+        "world_id": 65008
+      },
+      "split": "development",
+      "world_id": 65008
+    },
+    {
+      "archetype": "rolling_noise",
+      "config_hash": "8125ad831ce16b1d5de2e0d38670e4727c3c46c4f02552b2ff98f2f20b4430bf",
+      "event_id": "rolling_noise-65009",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 4128346899506008424,
+          "perturbation_seed": 11327788813243704332,
+          "policy_seed": 12961916470593997194,
+          "resident_seed": 13145824839017512554,
+          "world_layout_seed": 7305674231612422076
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65009
+      },
+      "generation_audit": {
+        "archetype": "rolling_noise",
+        "attempt": 0,
+        "burned_area_ha": 789.84,
+        "ignition_bearing_offset_deg": 34.586867418422315,
+        "ignition_distance_m": 1871.6169744688493,
+        "ignition_xy_m": [
+          4110.518276745616,
+          1469.7607048039936
+        ],
+        "n_spot_events": 94,
+        "split": "development",
+        "spotting_enabled": true,
+        "wind_dir_deg": 96.51977938294392,
+        "wind_shift": null,
+        "wind_speed_ms": 5.872381298695212,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 14921643782139893839,
+          "missingness_seed": 6265044184919485406,
+          "nature_seed": 17359722844507569103,
+          "sensor_seed": 18430871222331425470,
+          "spotting_seed": 13866012395390628810,
+          "weather_seed": 8056679560092355852
+        },
+        "master_seed": 20260920,
+        "world_id": 65009
+      },
+      "split": "development",
+      "world_id": 65009
+    },
+    {
+      "archetype": "open_plain",
+      "config_hash": "c17a8807d6a94f04f02ca65857e3e6f171ce8e56698c0622e3ca324948210556",
+      "event_id": "open_plain-65010",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 7941465459413153163,
+          "perturbation_seed": 13806489854780387521,
+          "policy_seed": 3069975733114903773,
+          "resident_seed": 8716421244287803383,
+          "world_layout_seed": 15682312384558547136
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65010
+      },
+      "generation_audit": {
+        "archetype": "open_plain",
+        "attempt": 0,
+        "burned_area_ha": 662.04,
+        "ignition_bearing_offset_deg": -48.81167370051461,
+        "ignition_distance_m": 2297.517033277719,
+        "ignition_xy_m": [
+          2859.797570211428,
+          5177.4282099843485
+        ],
+        "n_spot_events": 0,
+        "split": "development",
+        "spotting_enabled": false,
+        "wind_dir_deg": 319.3154910228551,
+        "wind_shift": null,
+        "wind_speed_ms": 4.095660438482484,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 15340599763739792917,
+          "missingness_seed": 6361236936187261623,
+          "nature_seed": 2800836570286184091,
+          "sensor_seed": 4626688669960881285,
+          "spotting_seed": 12687255485145108940,
+          "weather_seed": 12317069312574953032
+        },
+        "master_seed": 20260920,
+        "world_id": 65010
+      },
+      "split": "development",
+      "world_id": 65010
+    },
+    {
+      "archetype": "rolling_noise",
+      "config_hash": "fb993c21abfacbacd17af7aaacaadb462e15fb400150b31923350f6db6b30c60",
+      "event_id": "rolling_noise-65011",
+      "fv_seeds": {
+        "derived_fv_stream_seeds": {
+          "ignition_seed": 13985829118363632695,
+          "perturbation_seed": 3771935996026714507,
+          "policy_seed": 2940628478066997487,
+          "resident_seed": 1444907465057424899,
+          "world_layout_seed": 12373663888345922622
+        },
+        "fv_master_seed": 20260920,
+        "world_id": 65011
+      },
+      "generation_audit": {
+        "archetype": "rolling_noise",
+        "attempt": 0,
+        "burned_area_ha": 778.41,
+        "ignition_bearing_offset_deg": -65.27530366751228,
+        "ignition_distance_m": 2551.4870636838323,
+        "ignition_xy_m": [
+          1898.7756698513726,
+          524.7324886394917
+        ],
+        "n_spot_events": 116,
+        "split": "development",
+        "spotting_enabled": true,
+        "wind_dir_deg": 132.6582812744532,
+        "wind_shift": null,
+        "wind_speed_ms": 3.893656211675767,
+        "world_generator_version": "fv-worlds-v1"
+      },
+      "lab_seeds": {
+        "derived_stream_seeds": {
+          "master_seed": 11394342844073490091,
+          "missingness_seed": 2028135941494955371,
+          "nature_seed": 3092596071794790838,
+          "sensor_seed": 932284808833640868,
+          "spotting_seed": 9771465955103943362,
+          "weather_seed": 7462840092087163282
+        },
+        "master_seed": 20260920,
+        "world_id": 65011
+      },
+      "split": "development",
+      "world_id": 65011
+    }
+  ]
+}
