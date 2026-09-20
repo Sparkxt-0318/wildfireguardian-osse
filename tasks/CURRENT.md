@@ -2,9 +2,30 @@
 
 ## Active
 
-Nothing in progress. Phase 1 is complete (`tasks/COMPLETED.md`); Phase 2 has not
-been started and should not be until the Phase 1 limitations below have been
-reviewed.
+Nothing in progress. Phase 1 (laboratory) and the forecast-value MVE are both
+complete (`tasks/COMPLETED.md`).
+
+## Next up for the forecast-value experiment
+
+Ordered by how much each one changes what may be concluded. Full reasoning in
+`experiments/forecast_value_mve/MVE_READINESS.md`.
+
+1. **Loss sensitivity analysis.** Every MVE number is conditional on
+   `mve-loss-1.1.0`, whose failure and premature-action terms are within a
+   factor of two of each other. Nothing else should be scaled up before this.
+2. **Re-run the frontier against the best baseline, not the primary one.** The
+   tuned baseline lost to a simpler fixed buffer on the held-out split, so
+   every `ΔJ` is ~0.03 favourable to the forecast-aware policy.
+3. **A stronger independent forecast model.** Mode B reaches CSI 0.12–0.29 and
+   its advantage over a well-tuned buffer is within noise. Conclusions about
+   forecast value rest on Mode B, so its weakness bounds them.
+4. **Replace the placeholder dispatch adapter** with
+   `wildfireguardian-assisted-dispatch` through the existing contract.
+5. **Fix the false-alarm blind spot.** 58 of 60 Stage B worlds were threatened,
+   so `unnecessary_action` fired twice and over-evacuating is barely punished —
+   a bias pointing the same way as the headline result.
+6. **Stage C** (several hundred worlds) to resolve the 7 of 20 `UNRESOLVED`
+   frontier slices. Compute is not the constraint; ~2.2 s per world.
 
 ## Next up (from `tasks/ROADMAP.md`, highest value first)
 

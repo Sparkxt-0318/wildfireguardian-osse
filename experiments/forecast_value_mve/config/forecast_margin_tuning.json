@@ -1,0 +1,71 @@
+{
+  "split": "validation",
+  "n_worlds": 12,
+  "master_seed": 7717,
+  "grid": [
+    0.0,
+    10.0,
+    20.0,
+    30.0,
+    45.0,
+    60.0,
+    75.0,
+    90.0
+  ],
+  "best_safety_margin_min": 90.0,
+  "best_mean_loss": 0.28402328014176575,
+  "table": [
+    {
+      "safety_margin_min": 0.0,
+      "mean_loss": 0.4249285453426924,
+      "n_records": 720
+    },
+    {
+      "safety_margin_min": 10.0,
+      "mean_loss": 0.4249285453426924,
+      "n_records": 720
+    },
+    {
+      "safety_margin_min": 20.0,
+      "mean_loss": 0.41382529632773574,
+      "n_records": 720
+    },
+    {
+      "safety_margin_min": 30.0,
+      "mean_loss": 0.39343095002362277,
+      "n_records": 720
+    },
+    {
+      "safety_margin_min": 45.0,
+      "mean_loss": 0.3792592857160237,
+      "n_records": 720
+    },
+    {
+      "safety_margin_min": 60.0,
+      "mean_loss": 0.34616102347630295,
+      "n_records": 720
+    },
+    {
+      "safety_margin_min": 75.0,
+      "mean_loss": 0.2948412153765665,
+      "n_records": 720
+    },
+    {
+      "safety_margin_min": 90.0,
+      "mean_loss": 0.28402328014176575,
+      "n_records": 720
+    }
+  ],
+  "note": "Chosen over the whole condition grid at once, not per condition: a policy cannot know which error regime it is facing.",
+  "plateau_check": {
+    "note": "The grid optimum sat at its upper edge, so larger margins were checked explicitly: 90 -> 0.2840, 105 -> 0.2849, 120 -> 0.2824, 150 -> 0.2848. Spread across the plateau is 0.002, i.e. noise. The smallest margin on the plateau is chosen, by parsimony.",
+    "measurements": {
+      "90": 0.284,
+      "105": 0.2849,
+      "120": 0.2824,
+      "150": 0.2848
+    }
+  },
+  "frozen_safety_margin_min": 90.0,
+  "interpretation": "Mean J falls monotonically from 0.4249 at a zero margin to a plateau of ~0.284 at and beyond the 90-minute forecast horizon. In this OSSE the value of a forecast comes from using it as a full-horizon early-warning test -- 'order as soon as anything predicted within the window would block the mission' -- and NOT from shaving the decision to the last feasible moment, which is the most error-sensitive point available."
+}

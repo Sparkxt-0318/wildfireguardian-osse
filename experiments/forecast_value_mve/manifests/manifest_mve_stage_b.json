@@ -1,0 +1,124 @@
+{
+  "experiment_id": "mve_stage_b",
+  "protocol_version": "mve-1.0.0",
+  "git_commit": "a27a2ee38f156c4302e084e3730902672dd958eb",
+  "package_version": "0.1.0",
+  "world_generator_version": "mve-worlds-1.0.0",
+  "nature_model_version": "osse-nature-1.0.0",
+  "planner_model_version": "mve-planner-1.0.0",
+  "observation_model_version": "osse-observations-1.0.0",
+  "generator_version": "1.0.0",
+  "baseline_version": "mve-baseline-1.0.0",
+  "policy_version": "mve-policy-1.0.0",
+  "loss_version": "mve-loss-1.1.0",
+  "dispatch_semantics_id": "placeholder-dispatch-0.1.0",
+  "dispatch_semantics_note": "Placeholder adapter, NOT wildfireguardian-assisted-dispatch. Results depend on these mission semantics.",
+  "seed_manifest": {
+    "master_seed": 20260920,
+    "streams": [
+      "master_seed",
+      "nature_seed",
+      "weather_seed",
+      "spotting_seed",
+      "sensor_seed",
+      "missingness_seed",
+      "planner_seed"
+    ],
+    "derivation": "sha256('wgosse|v1|{master}|{world_id}|{stream}[|{tag}]')"
+  },
+  "config": {
+    "experiment_id": "mve_stage_b",
+    "split": "final",
+    "n_worlds": 60,
+    "master_seed": 20260920,
+    "stage": "B",
+    "baseline_params": {
+      "buffer_m": 350.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 2.0
+    },
+    "error_levels": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "severe"
+    ],
+    "latency_levels_min": [
+      0.0,
+      5.0,
+      15.0,
+      30.0,
+      60.0
+    ],
+    "mission_kinds": [
+      "self_evacuation",
+      "assisted_evacuation"
+    ],
+    "forecast_horizon_min": 90.0,
+    "skill_reference_epoch_min": 60.0,
+    "forecast_safety_margin_min": 90.0,
+    "extra_forecast_margins": [
+      0.0
+    ],
+    "dispatch_semantics_id": "placeholder-dispatch-0.1.0"
+  },
+  "config_hash": "43febb10b9d6c27b2ff62d20c25d875e06c8f3dafca69a856e0d9365890f748a",
+  "world_generation_audit": {
+    "note": "No distribution below is constrained by Korean data. These are synthetic worlds; results are not Korean-anchored.",
+    "distributions": {
+      "ignition_location": {
+        "rule": "upwind of the village at 1100 m +/- 200 m, bearing jitter 30 deg",
+        "status": "STRESS-TEST",
+        "caveat": "Deliberately biases the sample toward threatened villages. Without it most worlds would contain no decision problem. It is NOT a claim about where fires start."
+      },
+      "wind_speed_ms": {
+        "rule": "uniform over [2.0, 3.0, 4.0, 5.0, 6.0]",
+        "status": "ASSUMED",
+        "caveat": "Capped at 6 m/s by the propagation validity envelope."
+      },
+      "wind_direction_deg": {
+        "rule": "uniform over [0, 360)",
+        "status": "ASSUMED"
+      },
+      "wind_shifts": {
+        "rule": "50% of worlds veer 40.0 deg at mid-run",
+        "status": "STRESS-TEST"
+      },
+      "spread_multiplier": {
+        "rule": "uniform over [0.85, 1.25]",
+        "status": "ASSUMED"
+      },
+      "fuel_heterogeneity": {
+        "rule": "per archetype: uniform, or smoothed value noise 0.5-1.35",
+        "status": "ASSUMED"
+      },
+      "terrain": {
+        "rule": "per archetype: flat, planar slope, or Gaussian ridge",
+        "status": "ASSUMED",
+        "caveat": "Not derived from any DEM (docs/ASSUMPTIONS.md#A-05)."
+      },
+      "spotting": {
+        "rule": "enabled in 40% of worlds",
+        "status": "STRESS-TEST"
+      },
+      "route_topology": {
+        "rule": "two evacuation routes, one direct and one detour, plus one approach",
+        "status": "ASSUMED",
+        "caveat": "Not a real road network; see the Korean anchoring plan."
+      },
+      "village_geometry": {
+        "rule": "fixed fractions of the domain, identical in every world",
+        "status": "ASSUMED",
+        "caveat": "Village, destination and base do not vary between worlds, so geometric variation comes only from wind direction and ignition placement."
+      }
+    }
+  },
+  "created_utc": "2026-09-20T03:12:27.651066Z",
+  "data_hashes": {
+    "evaluation_records_mve_stage_b.csv": "89daf322c2d5d5fb2d6177007ff9da9157566cf48d908ef43fa3376c6ecace6e",
+    "world_index_mve_stage_b.json": "b6e18e28d447029eab7a778198a102e9c64ce892fd658593a3ee43327a226e73"
+  },
+  "elapsed_s": 129.60946083068848,
+  "n_records": 10200
+}

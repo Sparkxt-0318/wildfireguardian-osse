@@ -16,6 +16,7 @@ def test_stream_names_are_the_documented_set():
         "spotting_seed",
         "sensor_seed",
         "missingness_seed",
+        "planner_seed",
     }
 
 
@@ -35,8 +36,8 @@ def test_streams_are_distinct_across_names_ids_and_tags():
     } | {
         derive_seed(1, 0, "sensor_seed", tag) for tag in ("a", "b", "a:jitter")
     }
-    # 6 streams + 8 world ids (one of which duplicates) + 3 tags, all distinct
-    assert len(seeds) == 6 + 8 - 1 + 3
+    # 7 streams + 8 world ids (one of which duplicates) + 3 tags, all distinct
+    assert len(seeds) == 7 + 8 - 1 + 3
 
 
 def test_unknown_stream_is_rejected():

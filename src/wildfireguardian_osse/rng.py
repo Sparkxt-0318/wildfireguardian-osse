@@ -32,6 +32,11 @@ STREAM_NAMES: tuple[str, ...] = (
     "spotting_seed",
     "sensor_seed",
     "missingness_seed",
+    # Planner-side stochasticity (forecast-model tie-breaking, any sampling a
+    # planner does).  Separate from every nature stream so that a stochastic
+    # planner cannot perturb the world it is trying to predict
+    # (``experiments/forecast_value_mve/PROTOCOL.md`` section 13).
+    "planner_seed",
 )
 
 #: Namespace prefix.  Changing it re-randomises every world ever generated, so

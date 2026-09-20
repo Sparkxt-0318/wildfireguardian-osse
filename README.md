@@ -157,6 +157,31 @@ pytest -q          # 158 tests
 wg-osse selftest   # the eight validation worlds, generated and validated
 ```
 
+## Forecast-value experiment
+
+The first flagship experiment built on this laboratory asks: *how accurate and
+how timely must a wildfire forecast be before forecast-aware protective action
+outperforms a strong tuned trigger/buffer policy under hidden ground truth?*
+
+```bash
+wg-osse experiment tune                      # baseline, validation split only
+wg-osse experiment benchmark                 # five constructed benchmarks
+wg-osse experiment run --split final         # the paired staged run
+wg-osse experiment frontier <records.csv>    # break-even analysis
+wg-osse experiment figures  <records.csv>    # the five report figures
+```
+
+Everything lives in `experiments/forecast_value_mve/`: a frozen `PROTOCOL.md`,
+the run manifests, the per-world evaluation records exported for
+`wildfireguardian-evaluation`, figures, and six reports — method, results,
+leakage audit, frontier, failure analysis and limitations — plus
+`MVE_READINESS.md`.
+
+Headline, and it is a conditional one: **conventional forecast skill did not
+determine decision value** in these worlds, and **whether a break-even frontier
+exists at all depended on how the forecast was used, not only on how good it
+was.** Synthetic worlds only; not Korean-anchored.
+
 ## Status
 
 Phase 1 complete. **Not integrated with any other WildfireGuardian repository**,

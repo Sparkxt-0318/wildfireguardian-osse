@@ -1,0 +1,391 @@
+{
+  "split": "validation",
+  "n_worlds": 20,
+  "best_params": {
+    "buffer_m": 350.0,
+    "time_buffer_min": 20.0,
+    "wind_gain": 2.0
+  },
+  "grid": {
+    "buffer_m": [
+      200.0,
+      350.0,
+      500.0,
+      700.0,
+      900.0
+    ],
+    "wind_gain": [
+      0.0,
+      2.0,
+      4.0,
+      6.0
+    ],
+    "time_buffer_min": [
+      10.0,
+      20.0,
+      30.0
+    ]
+  },
+  "table": [
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.418522153307444
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.418522153307444
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.418522153307444
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.420772153307444
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.420772153307444
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.3780064408242156
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.420772153307444
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.35820996840294106
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.362959968402941
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.3780064408242156
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.362959968402941
+    },
+    {
+      "buffer_m": 200.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.420772153307444
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.420772153307444
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.420772153307444
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.420772153307444
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.353459968402941
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.36045996840294103
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.353459968402941
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.362709968402941
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.36045996840294103
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 350.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.3780064408242156
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.3780064408242156
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.3780064408242156
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.35820996840294106
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.360209968402941
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.360209968402941
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 500.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.3675032805386902
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.3675032805386902
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.3675032805386902
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 700.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 0.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 2.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 4.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 10.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 20.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    },
+    {
+      "buffer_m": 900.0,
+      "time_buffer_min": 30.0,
+      "wind_gain": 6.0,
+      "mean_loss": 0.37000328053869025
+    }
+  ]
+}

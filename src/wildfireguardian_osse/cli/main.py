@@ -32,6 +32,7 @@ from ..scenarios.library import (
 from ..scenarios.sweep import expand_sweep, load_sweep
 from ..storage.writer import BatchWriter, WorldWriter
 from ..validation.checks import validate_world
+from . import experiment_cmd
 from ..validation.summary import summarize_batch, summary_markdown
 
 EXIT_OK = 0
@@ -258,6 +259,8 @@ def build_parser() -> argparse.ArgumentParser:
     ex = sub.add_parser("export-scenarios", help="write the validation scenarios as YAML")
     ex.add_argument("directory", nargs="?", default="experiments/manifests/validation")
     ex.set_defaults(func=cmd_export_scenarios)
+
+    experiment_cmd.register(sub)
 
     st = sub.add_parser("selftest", help="generate and validate all eight validation worlds")
     st.add_argument("-o", "--output", default="worlds/validation")

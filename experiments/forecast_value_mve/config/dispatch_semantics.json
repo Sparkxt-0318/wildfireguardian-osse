@@ -1,0 +1,18 @@
+{
+  "semantics_id": "placeholder-dispatch-0.1.0",
+  "warning": "This is NOT wildfireguardian-assisted-dispatch. It is a minimal placeholder implementing three semantics: full edge traversal interval, pickup duration, coherent scenarios.",
+  "params": {
+    "speed_m_per_min": 450.0,
+    "self_evac_prep_min": 10.0,
+    "responder_dispatch_min": 5.0,
+    "pickup_duration_min": 12.0,
+    "exposure_radius_m": 400.0,
+    "road_blockage_duration_min": 60.0
+  },
+  "non_monotone_window_measurement": {
+    "question": "Are non-monotone feasible dispatch windows actually exercised by the MVE worlds?",
+    "answer": "No, not at the declared 60-minute blockage duration.",
+    "measurement": "Over 8 validation worlds x 2 routes x 17 order times, feasibility was compared against permanent blockage. Differences and reopening events by blockage duration: 5 min -> 16 differences, 10 reopenings; 15/30/60/120 min -> 0 and 0.",
+    "implication": "The adapter CAN express non-monotone windows (demonstrated in tests/test_missions.py), but within the MVE's geometry and 180-minute horizon the fire never crosses a route early enough for it to reopen before the decision window ends. Effective feasibility in the MVE is therefore monotone in order time. Reported in reports/LIMITATIONS.md rather than claimed as active."
+  }
+}

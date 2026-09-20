@@ -1,0 +1,92 @@
+{
+  "note": "Validation cases, not evidence about prevalence. Passing shows the apparatus can express the phenomenon.",
+  "split": "development",
+  "n_worlds": 16,
+  "outcomes": [
+    {
+      "benchmark": "ACCURATE_BUT_LATE",
+      "status": "DEMONSTRATED",
+      "expectation": "a perfect but delayed forecast keeps its skill and loses its value",
+      "observed": {
+        "skill_csi": 1.0,
+        "mean_delta_j_latency_60": -0.062123944005308886,
+        "mean_delta_j_latency_0": -0.11164161460849148,
+        "n_worlds": 16
+      },
+      "note": ""
+    },
+    {
+      "benchmark": "CRUDE_BUT_TIMELY",
+      "status": "DEMONSTRATED",
+      "expectation": "a degraded but prompt forecast still beats the tuned baseline",
+      "observed": {
+        "error_regime": "high",
+        "skill_csi": 0.22665561210335974,
+        "mean_delta_j": -0.10830472210489592,
+        "n_worlds": 16
+      },
+      "note": ""
+    },
+    {
+      "benchmark": "FORECAST_HARM",
+      "status": "DEMONSTRATED",
+      "expectation": "acting on a badly wrong forecast can be worse than the tuned baseline",
+      "observed": {
+        "error_regime": "severe",
+        "worst_policy_id": "forecast_aware_margin_0",
+        "worst_mean_delta_j": 0.3921550690130775,
+        "frozen_policy_mean_delta_j": 0.023318550138790424,
+        "n_worlds": 16
+      },
+      "note": "Expressible by the apparatus. Whether the FROZEN policy exhibits it is a separate question, answered by frozen_policy_mean_delta_j."
+    },
+    {
+      "benchmark": "BASELINE_MATCH",
+      "status": "DEMONSTRATED",
+      "expectation": "there exist conditions where the tuned baseline matches the forecast",
+      "observed": {
+        "n_matching_conditions": 2,
+        "examples": [
+          {
+            "error_regime": "severe",
+            "latency_min": 0.0,
+            "mean_delta_j": 0.023318550138790424,
+            "n_worlds": 16
+          },
+          {
+            "error_regime": "severe",
+            "latency_min": 5.0,
+            "mean_delta_j": 0.02490449464726086,
+            "n_worlds": 16
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "benchmark": "SIMILAR_SKILL_DIFFERENT_VALUE",
+      "status": "DEMONSTRATED",
+      "expectation": "conventional skill alone does not determine decision value",
+      "observed": {
+        "delta_j_gap": 0.39202230606095506,
+        "condition_a": {
+          "mode": "CONTROLLED_PERTURBATION",
+          "error_regime": "severe",
+          "latency_min": 0.0,
+          "skill_csi": 0.10887356175841109,
+          "mean_delta_j": 0.3921550690130775,
+          "policy_id": "forecast_aware_margin_0"
+        },
+        "condition_b": {
+          "mode": "CONTROLLED_PERTURBATION",
+          "error_regime": "severe",
+          "latency_min": 60.0,
+          "skill_csi": 0.07151456849572717,
+          "mean_delta_j": 0.00013276295212247025,
+          "policy_id": "forecast_aware_margin_0"
+        }
+      },
+      "note": "This is the benchmark that matters most for the research question: if it is DEMONSTRATED, skill is not sufficient to predict value in this OSSE."
+    }
+  ]
+}

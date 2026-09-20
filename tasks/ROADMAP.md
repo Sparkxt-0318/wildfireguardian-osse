@@ -41,6 +41,12 @@ Ordered by expected value, highest first.
 6. **Scenario families with rare extremes** (long-tail wind, multi-ignition).
 7. **Parquet output** as an optional fast path, keeping CSV as the contract.
 
+## Phase 2b — Forecast-value MVE (complete, first run)
+
+Built on the Phase 1 laboratory without modifying its guarantees. Protocol,
+records, figures and reports in `experiments/forecast_value_mve/`; outcomes and
+open items in `tasks/COMPLETED.md` and `experiments/forecast_value_mve/MVE_READINESS.md`.
+
 ## Phase 3 — Consumption interface (explicitly deferred)
 
 Not to be started before Phase 2 is reviewed. When it is:

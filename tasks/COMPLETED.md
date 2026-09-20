@@ -108,3 +108,60 @@ x spotting on/off (2) x detection latency (2). Summary kept at
 | summary statistics produced | yes — `wg-osse summarize` |
 | limitations documented | yes — `README.md`, `docs/VALIDATION.md#5`, `docs/FAILURE_MODES.md` |
 | not integrated with another repo | correct — explicitly deferred (`docs/DECISIONS.md#d-001`) |
+
+
+---
+
+# Forecast-value MVE (Phase 2 flagship, first run)
+
+Deliverables in `experiments/forecast_value_mve/`. Protocol `mve-1.1.0`, frozen
+before the final split was touched.
+
+## What was built
+
+* **Mission layer** (`missions/`): road network with two asymmetric evacuation
+  routes, world geometry, and the `DispatchAdapter` contract with a clearly
+  labelled `PlaceholderDispatchAdapter` (full edge traversal intervals, pickup
+  duration, coherent scenarios). `wildfireguardian-assisted-dispatch` was not
+  reimplemented.
+* **Planner layer** (`planner/`): `SealedTruth` + `planner_sandbox()` enforcing
+  the truth boundary in code; `PlannerView.at(s)` as the only route to `D_s`;
+  both forecast modes; skill metrics measured independently of any policy.
+* **Policies** (`policies/`): a strong tuned trigger/buffer baseline, three
+  secondary baselines, an oracle bound, and one primary forecast-aware policy
+  with `ACT_NOW` / `WAIT_FOR_FORECAST` semantics.
+* **Experiment** (`experiment/`): world generation with archetype splits,
+  declared loss, paired runner, record export, run manifests, constructed
+  benchmarks, frontier estimator, tuning with a final-split guard, figures.
+* **CLI**: `wg-osse experiment tune | run | benchmark | frontier | figures`.
+* 63 new tests (221 total).
+
+## Findings that changed the design
+
+| Found | Outcome |
+|---|---|
+| Premature action was nearly free, so the tuned baseline landed within 0.01 of the oracle and the experiment could not discriminate | Loss weights rebalanced once, against degeneracy and not against `ΔJ` (`docs/DECISIONS.md#d-017`) |
+| A road was modelled as permanently impassable once burned, making feasibility monotone in order time and the documented non-monotone dispatch window impossible | Blockage became a passage window (`docs/DECISIONS.md#d-018`); caught by a test asserting the documented property |
+| The forecast-aware policy was untuned while the baseline was tuned — an asymmetry in the baseline's favour | The policy's one parameter is now tuned on validation and frozen; the optimum is a plateau at the forecast horizon |
+| Figure 4 hid the dominant failure mode in an unlabelled "other" bucket | Categories made exhaustive; "route already blocked at departure" is 14% of all decisions and the main way policies fail |
+
+## Results (Stage B, 60 final-split worlds, self-evacuation)
+
+* Tuned baseline 0.267; oracle bound 0.043 — real headroom.
+* **Conventional skill does not determine decision value.** Mode B at CSI 0.121
+  gives `ΔJ = −0.039`; Mode A `severe` at CSI 0.107 gives `ΔJ = +0.067`.
+* **No break-even frontier for the frozen policy** (better at every error level
+  up to 15 min latency); a sharp one for the aggressive probe, bracketed
+  between `none` and `medium`. Whether a frontier exists depends on how the
+  forecast is used, not only on how good it is.
+* At 60 minutes of latency every condition equals the baseline exactly.
+* All five constructed benchmarks `DEMONSTRATED`.
+
+## Reported against interest
+
+* The tuned baseline was beaten by a simpler fixed buffer on the held-out split.
+* Against that best baseline, the independent model's advantage is within noise.
+* 97% of worlds were threatened, so the false-alarm side is barely tested.
+* The non-monotone dispatch window is expressible but **not exercised** by these
+  worlds (measured: identical to permanent blockage at the declared 60 min).
+* No Korean anchoring; nothing here supports an operational threshold.

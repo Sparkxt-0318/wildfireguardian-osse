@@ -1,0 +1,12 @@
+{
+  "note": "Tuned on the validation split only (plain_patchy, ridge_along), 12 worlds, master_seed 7717, over the whole condition grid at once. Frozen for every subsequent run, including the final split.",
+  "tuned_on_split": "validation",
+  "n_tuning_worlds": 12,
+  "tuning_master_seed": 7717,
+  "policy_version": "mve-policy-1.1.0",
+  "params": {
+    "safety_margin_min": 90.0
+  },
+  "mean_validation_loss": 0.284,
+  "why_tuned_at_all": "Tuning the baseline while leaving the forecast-aware policy untuned would be an asymmetry in the baseline's favour. Both are tuned on validation, over the whole grid, and then frozen."
+}

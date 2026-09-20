@@ -1,0 +1,1448 @@
+{
+  "self_evacuation|CONTROLLED_PERTURBATION|forecast_aware_feasibility": [
+    {
+      "latency_min": 0.0,
+      "kind": "NO_CROSSING",
+      "crossings": [],
+      "note": "no sign change across the resolved error levels (forecast-aware better); unresolved at ['high', 'severe']",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.14302315486936668,
+          "se_delta_j": 0.038069044606167404,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.11761651275956667,
+          "se_delta_j": 0.04250138374215466,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.10418162226375,
+          "se_delta_j": 0.04275721796812116,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.01643396347011667,
+          "se_delta_j": 0.04791069268773882,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.06655521036585,
+          "se_delta_j": 0.05737866094758235,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 5.0,
+      "kind": "NO_CROSSING",
+      "crossings": [],
+      "note": "no sign change across the resolved error levels (forecast-aware better); unresolved at ['severe']",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.13969174392335001,
+          "se_delta_j": 0.0385185859164419,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.11869129525046666,
+          "se_delta_j": 0.0357294071527575,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.12545474846886667,
+          "se_delta_j": 0.038791215594448314,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.09094231956256668,
+          "se_delta_j": 0.03309035294460159,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.08161065688223332,
+          "se_delta_j": 0.050516870306262875,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 15.0,
+      "kind": "NO_CROSSING",
+      "crossings": [],
+      "note": "no sign change across the resolved error levels (forecast-aware better); unresolved at ['severe']",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.0598910320816,
+          "se_delta_j": 0.024149058748684733,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.059095089199016675,
+          "se_delta_j": 0.024038893728070512,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.03673077425133334,
+          "se_delta_j": 0.017938911632528136,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.0366683006727,
+          "se_delta_j": 0.017696751144672274,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.04290501619213334,
+          "se_delta_j": 0.041001042190208475,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 30.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.03893265143868333,
+          "se_delta_j": 0.023310743696584854,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.03893265143868333,
+          "se_delta_j": 0.023310743696584854,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.022196133906916667,
+          "se_delta_j": 0.016818710338873832,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.023128792796533338,
+          "se_delta_j": 0.016774656418620366,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.025737029081633334,
+          "se_delta_j": 0.03342996257002829,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 60.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 3.540345333333435e-05,
+          "se_delta_j": 3.540345333333435e-05,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    }
+  ],
+  "self_evacuation|CONTROLLED_PERTURBATION|forecast_aware_margin_0": [
+    {
+      "latency_min": 0.0,
+      "kind": "CROSSING",
+      "crossings": [
+        [
+          "none",
+          "medium"
+        ]
+      ],
+      "note": "break-even bracketed between the named error levels; no interpolation is performed and nothing is claimed inside unresolved bands",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.2256983808078167,
+          "se_delta_j": 0.04004172575360486,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.10441414972316669,
+          "se_delta_j": 0.06729197253589093,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.2591981658625,
+          "se_delta_j": 0.06904830333913718,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.27488019445968337,
+          "se_delta_j": 0.07436234467103052,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.4839820027125833,
+          "se_delta_j": 0.07487048689656255,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 5.0,
+      "kind": "CROSSING",
+      "crossings": [
+        [
+          "none",
+          "medium"
+        ]
+      ],
+      "note": "break-even bracketed between the named error levels; no interpolation is performed and nothing is claimed inside unresolved bands",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.18539672568905002,
+          "se_delta_j": 0.04011855879180114,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.061883879501516664,
+          "se_delta_j": 0.054819333714313516,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.2001369140266667,
+          "se_delta_j": 0.05774495783024728,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.21208050499691666,
+          "se_delta_j": 0.06464486223581109,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.34015134999005,
+          "se_delta_j": 0.06958304729294479,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 15.0,
+      "kind": "CROSSING",
+      "crossings": [
+        [
+          "none",
+          "medium"
+        ]
+      ],
+      "note": "break-even bracketed between the named error levels; no interpolation is performed and nothing is claimed inside unresolved bands",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.08660530391078332,
+          "se_delta_j": 0.027001666907376078,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.029083764423166666,
+          "se_delta_j": 0.043498408330715006,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.13394046790813335,
+          "se_delta_j": 0.04568955433524759,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.15429694231280003,
+          "se_delta_j": 0.05173873809769407,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.2192134498672,
+          "se_delta_j": 0.06017306629299329,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 30.0,
+      "kind": "NO_CROSSING",
+      "crossings": [],
+      "note": "no sign change across the resolved error levels (baseline better); unresolved at ['none', 'low', 'medium']",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.0468323852146,
+          "se_delta_j": 0.02411813664544614,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.00283136653575,
+          "se_delta_j": 0.029073853391967754,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.051798374551716674,
+          "se_delta_j": 0.03154640684305947,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.08496654814121668,
+          "se_delta_j": 0.038425057483075196,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.11813472173128334,
+          "se_delta_j": 0.048062451747886585,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 60.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 3.540345333333435e-05,
+          "se_delta_j": 3.540345333333435e-05,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 3.540345333333435e-05,
+          "se_delta_j": 3.540345333333435e-05,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    }
+  ],
+  "self_evacuation|INDEPENDENT_MODEL_FORECAST|forecast_aware_feasibility": [
+    {
+      "latency_min": 0.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.03886187256645001,
+          "se_delta_j": 0.03788642130647994,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 5.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.04441174837575,
+          "se_delta_j": 0.03381243796534724,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 15.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.030011800914766663,
+          "se_delta_j": 0.017320349195050388,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 30.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.0015978111830833334,
+          "se_delta_j": 0.0015978111830833332,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 60.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    }
+  ],
+  "self_evacuation|INDEPENDENT_MODEL_FORECAST|forecast_aware_margin_0": [
+    {
+      "latency_min": 0.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.06563580526868333,
+          "se_delta_j": 0.03572274527387146,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 5.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.053606616961916674,
+          "se_delta_j": 0.03569227648463755,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 15.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.02831204513123333,
+          "se_delta_j": 0.028538350832829525,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 30.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.04584414398198334,
+          "se_delta_j": 0.027060085582193385,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 60.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    }
+  ],
+  "assisted_evacuation|CONTROLLED_PERTURBATION|forecast_aware_feasibility": [
+    {
+      "latency_min": 0.0,
+      "kind": "NO_CROSSING",
+      "crossings": [],
+      "note": "no sign change across the resolved error levels (forecast-aware better); unresolved at ['high', 'severe']",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.167649066565,
+          "se_delta_j": 0.042143600811462845,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.15517975509499998,
+          "se_delta_j": 0.042691635882442534,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.15274664885833333,
+          "se_delta_j": 0.04276555678121467,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.06294158679833334,
+          "se_delta_j": 0.04834427209586038,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.07472051288666666,
+          "se_delta_j": 0.048326646491626074,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 5.0,
+      "kind": "NO_CROSSING",
+      "crossings": [],
+      "note": "no sign change across the resolved error levels (forecast-aware better); unresolved at ['severe']",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.11713479362333333,
+          "se_delta_j": 0.036485393006254765,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.10744310967166665,
+          "se_delta_j": 0.036785228698553156,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.07066785284,
+          "se_delta_j": 0.030578533959864904,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.07283223148000001,
+          "se_delta_j": 0.03008812646308873,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.054969524914999984,
+          "se_delta_j": 0.04146034822242967,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 15.0,
+      "kind": "NO_CROSSING",
+      "crossings": [],
+      "note": "no sign change across the resolved error levels (forecast-aware better); unresolved at ['medium', 'high', 'severe']",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.061321124580000004,
+          "se_delta_j": 0.02592824838904245,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.05746277396166667,
+          "se_delta_j": 0.0259054436449267,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.03656473201666667,
+          "se_delta_j": 0.02064305986265984,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.022316616746666667,
+          "se_delta_j": 0.025796893965824193,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.03139407852166667,
+          "se_delta_j": 0.033827683236112745,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 30.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.030903247251666665,
+          "se_delta_j": 0.020942290488015772,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.01436458992,
+          "se_delta_j": 0.01359937246277335,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.012632049721666668,
+          "se_delta_j": 0.01350953114974364,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.014160568359999997,
+          "se_delta_j": 0.02428318708380803,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.027629417214999997,
+          "se_delta_j": 0.029832694281426278,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 60.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.013433445398333334,
+          "se_delta_j": 0.013433445398333332,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.013433445398333334,
+          "se_delta_j": 0.013433445398333332,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.013433445398333334,
+          "se_delta_j": 0.013433445398333332,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.013433445398333334,
+          "se_delta_j": 0.013433445398333332,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.013731375278333334,
+          "se_delta_j": 0.01373137527833333,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    }
+  ],
+  "assisted_evacuation|CONTROLLED_PERTURBATION|forecast_aware_margin_0": [
+    {
+      "latency_min": 0.0,
+      "kind": "CROSSING",
+      "crossings": [
+        [
+          "none",
+          "medium"
+        ]
+      ],
+      "note": "break-even bracketed between the named error levels; no interpolation is performed and nothing is claimed inside unresolved bands",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.24218641680166667,
+          "se_delta_j": 0.042483061198282206,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.05106903480333333,
+          "se_delta_j": 0.06302826423857907,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.14677180168499998,
+          "se_delta_j": 0.05543112741266394,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.17012935754833336,
+          "se_delta_j": 0.06021438875597492,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.3519564517783333,
+          "se_delta_j": 0.05900390157017173,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 5.0,
+      "kind": "CROSSING",
+      "crossings": [
+        [
+          "none",
+          "medium"
+        ]
+      ],
+      "note": "break-even bracketed between the named error levels; no interpolation is performed and nothing is claimed inside unresolved bands",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.15620668905333332,
+          "se_delta_j": 0.03779560851224702,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.054389564809999985,
+          "se_delta_j": 0.04866146412764888,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.12508201902,
+          "se_delta_j": 0.04688595716945686,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.14581542021666666,
+          "se_delta_j": 0.048835693599619964,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.27581766470833335,
+          "se_delta_j": 0.053206338909216916,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 15.0,
+      "kind": "CROSSING",
+      "crossings": [
+        [
+          "none",
+          "medium"
+        ]
+      ],
+      "note": "break-even bracketed between the named error levels; no interpolation is performed and nothing is claimed inside unresolved bands",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.08297060866166667,
+          "se_delta_j": 0.027699871121976995,
+          "resolved": true,
+          "sign": -1
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.05326566421166667,
+          "se_delta_j": 0.04277158335013874,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.09681329386999997,
+          "se_delta_j": 0.03800897569192486,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.1310053571383333,
+          "se_delta_j": 0.0431971231449558,
+          "resolved": true,
+          "sign": 1
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.20694905363166666,
+          "se_delta_j": 0.047215289423661516,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 30.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.035245485160000006,
+          "se_delta_j": 0.021340237253655494,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.019891438236666663,
+          "se_delta_j": 0.020294324811810746,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.01725082285,
+          "se_delta_j": 0.018733671582128044,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.046468685979999994,
+          "se_delta_j": 0.027671602714412578,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.10233373078666667,
+          "se_delta_j": 0.03578098261235401,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 60.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "none",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.013266778731666668,
+          "se_delta_j": 0.013266778731666666,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "low",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "medium",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.00016666666666666682,
+          "se_delta_j": 0.0001666666666666668,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "high",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.00016666666666666682,
+          "se_delta_j": 0.0001666666666666668,
+          "resolved": false,
+          "sign": 0
+        },
+        {
+          "error_regime": "severe",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.00016666666666666682,
+          "se_delta_j": 0.0001666666666666668,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    }
+  ],
+  "assisted_evacuation|INDEPENDENT_MODEL_FORECAST|forecast_aware_feasibility": [
+    {
+      "latency_min": 0.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.03013894991666667,
+          "se_delta_j": 0.026381516432842603,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 5.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": -0.01977287996000001,
+          "se_delta_j": 0.027947046042260476,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 15.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.008717103946666667,
+          "se_delta_j": 0.01659671566562551,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 30.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.032366890796666666,
+          "se_delta_j": 0.022573051805428762,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 60.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    }
+  ],
+  "assisted_evacuation|INDEPENDENT_MODEL_FORECAST|forecast_aware_margin_0": [
+    {
+      "latency_min": 0.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 0.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.009183902334999997,
+          "se_delta_j": 0.016752251854456574,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 5.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 5.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.03156070788333333,
+          "se_delta_j": 0.028482565780318884,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 15.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 15.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.04191247467,
+          "se_delta_j": 0.03012508662332911,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    },
+    {
+      "latency_min": 30.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 30.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.071736082465,
+          "se_delta_j": 0.031667938187359405,
+          "resolved": true,
+          "sign": 1
+        }
+      ]
+    },
+    {
+      "latency_min": 60.0,
+      "kind": "UNRESOLVED",
+      "crossings": [],
+      "note": "fewer than two error levels are separable from Monte-Carlo noise at this latency; no frontier is claimed",
+      "contrasts": [
+        {
+          "error_regime": "independent_model",
+          "latency_min": 60.0,
+          "n_worlds": 60,
+          "mean_delta_j": 0.0,
+          "se_delta_j": 0.0,
+          "resolved": false,
+          "sign": 0
+        }
+      ]
+    }
+  ]
+}

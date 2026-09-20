@@ -273,3 +273,55 @@ impermeable too.
 *Together with D-015:* `c_lb` was lowered again, to 0.07, so that the ellipse
 stays inside the raster's competence over the whole sweep range. `LB` is 1.4 at
 4 m/s, 2.0 at 6 m/s and 2.9 at 8 m/s.
+
+---
+
+## D-017 — Loss weights rebalanced once, against degeneracy
+**Date:** 2026-09-20 · **Status:** accepted
+
+`unnecessary_action` 0.20 → 0.50 and `excess_lead_hours` 0.05 → 0.30 per hour,
+in the forecast-value MVE loss (`loss_version` `mve-loss-1.1.0`).
+
+*Why:* with the original weights, evacuating four hours early cost about 0.06
+against a failure cost of 1.0. Acting immediately therefore dominated in every
+world, the tuned baseline landed within 0.01 of the oracle reference, and the
+apparatus could not express the `CRUDE_BUT_TIMELY` benchmark. A decision
+experiment whose baseline already matches the oracle measures nothing.
+
+*How the change was justified:* by the argument that a four-hour-premature
+village evacuation is roughly as costly as one failed mission — a statement
+about the decision problem, made on the **development** split, before any
+baseline tuning and before the final split was touched. It was **not** chosen by
+looking at `ΔJ`, and was not iterated.
+
+*Consequence:* the weights are frozen at these values for the MVE. Sensitivity
+analysis over them is the first item of future work and the first thing a
+sceptical reader should ask for; until it exists, every MVE result is
+conditional on this loss (`PROTOCOL.md` section 8).
+
+---
+
+## D-018 — A road is blocked while the front passes, not permanently
+**Date:** 2026-09-20 · **Status:** accepted
+
+`PlaceholderDispatchAdapter` blocks a road cell during
+`[arrival, arrival + road_blockage_duration_min]` (default 60 min) and treats it
+as passable afterwards. The first implementation blocked any cell that had ever
+burned.
+
+*Why:* permanent blockage makes mission feasibility **monotonically decreasing**
+in the order time. "Act as early as possible" is then trivially optimal, there
+is nothing for a forecast to buy beyond acting sooner, and the **non-monotone
+feasible dispatch window** that the brief names as a property these semantics
+must govern cannot exist at all.
+
+*How it was found:* by a test asserting the documented property. The
+documentation claimed windows could reopen; the implementation could not
+produce one. The test failed, and the implementation was wrong, not the test.
+
+*Consequence:* feasibility is genuinely non-monotone in the order time, so
+waiting can both destroy and restore options. The baseline buffer and the
+forecast-aware safety margin were **re-tuned** after this change, and the
+benchmark suite and both staged runs were regenerated; results produced before
+it are not comparable. `road_blockage_duration_min` is a declared placeholder
+parameter that the real `wildfireguardian-assisted-dispatch` package will own.

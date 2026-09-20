@@ -1,0 +1,14 @@
+{
+  "note": "Tuned on the validation split only (plain_patchy, ridge_along), 20 worlds, master_seed 7717. Frozen for every subsequent run, including the final split. See config/baseline_tuning.json for the full grid.",
+  "tuned_on_split": "validation",
+  "n_tuning_worlds": 20,
+  "tuning_master_seed": 7717,
+  "mean_validation_loss": 0.3535,
+  "baseline_version": "mve-baseline-1.0.0",
+  "params": {
+    "buffer_m": 350.0,
+    "time_buffer_min": 20.0,
+    "wind_gain": 2.0
+  },
+  "grid_flatness": "best 0.3535, worst 0.4208 across 60 candidates: the baseline is robust rather than knife-edge, so the comparison does not hinge on one lucky setting."
+}

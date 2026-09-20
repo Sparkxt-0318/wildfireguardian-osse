@@ -1,0 +1,164 @@
+[
+  {
+    "world_id": 0,
+    "event_id": "plain_uniform-00000",
+    "archetype": "plain_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 70.0,
+    "burned_area_ha": 385.29,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 234,
+    "n_mode_b_forecasts": 16
+  },
+  {
+    "world_id": 1,
+    "event_id": "slope_uniform-00001",
+    "archetype": "slope_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 60.82309704367092,
+    "burned_area_ha": 613.98,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 338,
+    "n_mode_b_forecasts": 16
+  },
+  {
+    "world_id": 2,
+    "event_id": "plain_uniform-00002",
+    "archetype": "plain_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 37.10957600717586,
+    "burned_area_ha": 576.63,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 191,
+    "n_mode_b_forecasts": 8
+  },
+  {
+    "world_id": 3,
+    "event_id": "slope_uniform-00003",
+    "archetype": "slope_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 82.64040653005695,
+    "burned_area_ha": 340.92,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 190,
+    "n_mode_b_forecasts": 17
+  },
+  {
+    "world_id": 4,
+    "event_id": "plain_uniform-00004",
+    "archetype": "plain_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 96.13015529026876,
+    "burned_area_ha": 351.72,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 193,
+    "n_mode_b_forecasts": 17
+  },
+  {
+    "world_id": 5,
+    "event_id": "slope_uniform-00005",
+    "archetype": "slope_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 36.686588669618,
+    "burned_area_ha": 853.29,
+    "flags": [
+      "boundary_contact"
+    ],
+    "warnings": [],
+    "n_detections": 406,
+    "n_mode_b_forecasts": 17
+  },
+  {
+    "world_id": 6,
+    "event_id": "plain_uniform-00006",
+    "archetype": "plain_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 47.150205495071376,
+    "burned_area_ha": 538.56,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 267,
+    "n_mode_b_forecasts": 17
+  },
+  {
+    "world_id": 7,
+    "event_id": "slope_uniform-00007",
+    "archetype": "slope_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 49.019328907684994,
+    "burned_area_ha": 906.48,
+    "flags": [
+      "boundary_contact"
+    ],
+    "warnings": [
+      "max_courant=1.02 exceeds 1.0: the front crosses more than one cell per step, so arrival times are interpolation-limited; reduce time.dt_min or increase grid.cell_size_m (docs/NATURE_MODEL.md#4)"
+    ],
+    "n_detections": 425,
+    "n_mode_b_forecasts": 17
+  },
+  {
+    "world_id": 8,
+    "event_id": "plain_uniform-00008",
+    "archetype": "plain_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 63.26121957042644,
+    "burned_area_ha": 667.08,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 306,
+    "n_mode_b_forecasts": 17
+  },
+  {
+    "world_id": 9,
+    "event_id": "slope_uniform-00009",
+    "archetype": "slope_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 40.0,
+    "burned_area_ha": 475.2,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 250,
+    "n_mode_b_forecasts": 17
+  },
+  {
+    "world_id": 10,
+    "event_id": "plain_uniform-00010",
+    "archetype": "plain_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 52.46278950959503,
+    "burned_area_ha": 510.12,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 245,
+    "n_mode_b_forecasts": 17
+  },
+  {
+    "world_id": 11,
+    "event_id": "slope_uniform-00011",
+    "archetype": "slope_uniform",
+    "split": "development",
+    "threatened": true,
+    "threat_time_min": 98.58719229853325,
+    "burned_area_ha": 464.31,
+    "flags": [],
+    "warnings": [],
+    "n_detections": 250,
+    "n_mode_b_forecasts": 17
+  }
+]
